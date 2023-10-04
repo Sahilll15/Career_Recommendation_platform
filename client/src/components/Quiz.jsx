@@ -1,5 +1,5 @@
-
 import React, { useState } from 'react';
+
 
 import MainLayout from "./Layout/MainLayout";
 
@@ -67,7 +67,7 @@ const Quiz = () => {
           {/* Progress Bar */}
           <div className="relative mb-4 h-4 bg-gray-300 rounded-full">
             <div
-              className="absolute top-0 left-0 h-full bg-blue-500 rounded-full"
+              className="absolute top-0 left-0 h-full bg-blue-600 rounded-full"
               style={{ width: `${progress}%` }}
             />
           </div>
@@ -83,7 +83,9 @@ const Quiz = () => {
               <div
                 key={index}
                 className={`bg-white p-4 border rounded cursor-pointer ${
-                  selectedAnswer === option ? ' bg-black text-white' : ''
+
+                  selectedAnswer === option ? ' bg-red-600 text-white' : ''
+
                 }`}
                 onClick={() => handleOptionSelect(option)}
               >

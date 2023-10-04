@@ -1,13 +1,12 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 
+// Define the Resume schema
 const resumeSchema = new mongoose.Schema({
-
     fullName: {
         type: String,
         required: true,
     },
-
-    phone: {
+    mobileNumber: {
         type: String,
         required: true,
     },
@@ -15,63 +14,69 @@ const resumeSchema = new mongoose.Schema({
         type: String,
         required: true,
     },
-    linkedin: {
+    linkedInUrl: {
         type: String,
     },
-
     about: {
         type: String,
-        required: true,
     },
-    education: [
+    education: {
+        tenthMarks: {
+            type: String,
+        },
+        twelfthMarks: {
+            type: String,
+        },
+        currentAverageMarks: {
+            type: String,
+        },
+    },
+    skills: {
+        type: [String],
+    },
+    workExperience: [
         {
-            institution: {
+            companyName: {
                 type: String,
-                required: true,
             },
-            degree: {
+            role: {
                 type: String,
-                required: true,
             },
-            graduationYear: {
-                type: Number,
-                required: true,
+            year: {
+                type: String,
             },
         },
     ],
-    experience: [
+    projects: [
         {
-            jobTitle: {
+            projectName: {
                 type: String,
-                required: true,
             },
-            company: {
+            about: {
                 type: String,
-                required: true,
             },
-            startDate: {
-                type: Date,
-                required: true,
+            githubLink: {
+                type: String,
             },
-            endDate: {
-                type: Date,
-                required: true,
-            },
-            responsibilities: [String],
         },
     ],
-
-    skills: [String],
-    certifications: [
+    awards: [
         {
-            name: String,
-            issuingOrganization: String,
-            date: Date,
+            position: {
+                type: String,
+            },
+            competitionName: {
+                type: String,
+            },
+            placeInstituteName: {
+                type: String,
+            },
         },
     ],
 });
 
 
-const Resume = mongoose.model('Resume', resumeSchema);
+
+const Resume = mongoose.model("Resume", resumeSchema);
 
 module.exports = Resume;

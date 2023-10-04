@@ -12,6 +12,7 @@ const quizRoutes = require('./routes/quiz.routes')
 
 
 const resumeRoutes = require('./routes/resume.routes')
+const groupRoutes = require('./routes/group.routes')
 
 
 const app = express()
@@ -26,10 +27,15 @@ myDb.myDb();
 app.use('/api/v1/auth/', userRoutes);
 app.use('/api/v1/category', categoryRoutes);
 app.use('/api/v1/articles', articleRoutes);
+
+
+app.use('/api/v1/groups', groupRoutes)
+
 app.use('/api/v1/interests', interestRoutes);
 app.use('/api/v1/rcmnd', recmndRoutes);
 app.use('/api/v1/resume', resumeRoutes);
 app.use('/api/v1/quiz', quizRoutes);
+
 
 app.listen(PORT, () => {
     console.log(`Server listening on ${PORT}`)

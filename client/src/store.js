@@ -1,5 +1,6 @@
 import { configureStore, getDefaultMiddleware } from '@reduxjs/toolkit'
 import authReducer from './redux/Auth/authSlice'
+import groupReducer from './redux/community/CommunitySlice'
 
 
 
@@ -9,7 +10,8 @@ import authReducer from './redux/Auth/authSlice'
 const store = configureStore({
     reducer: {
         // reducer
-        auth: authReducer
+        auth: authReducer,
+        group: groupReducer
     },
     middleware: getDefaultMiddleware({
         serializableCheck: false
