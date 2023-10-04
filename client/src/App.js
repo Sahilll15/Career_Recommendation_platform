@@ -15,7 +15,7 @@ import Resume from './pages/Resume'
 import Suggestion from './pages/Suggestion';
 import Forgot from './pages/Auth/Forgot';
 import Quiz from './components/Quiz';
-
+import Course from './pages/Cousre'
 
 const App = () => {
 
@@ -61,6 +61,8 @@ const App = () => {
             <Route path="/profile" element={<Profile />} />
 
             <Route path="/quiz" element={<Quiz />} />
+            <Route path="/course" element={<Course />} />
+
             
 
             <Route path="/jobs" element={<Jobs />} />
