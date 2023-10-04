@@ -1,18 +1,19 @@
 import React from "react";
 
-const ResumeDisplay = () => {
+const ResumeDisplay = ({ resumeState }) => {
+
   return (
     <div className="mt-5">
       <div>
-        <p className="text-center font-bold justify-center">Aditya Shah</p>
+        <p className="text-center font-bold justify-center">{resumeState?.fullname}</p>
         <div className="flex justify-center items-center mt-2">
-          <p className="mr-4">+91 0123456789</p>
-          <p className="mr-4">abc@gmail.com</p>
-          <p>LinkedIn url</p>
+          <p className="mr-4">{resumeState?.mobileNumber}</p>
+          <p className="mr-4">{resumeState?.email}</p>
+          <p>{resumeState?.linkedinurl}</p>
         </div>
 
         <div>
-          <p className="font-medium mt-6 ">About me</p>
+          <p className="font-medium mt-6 ">{resumeState.about}</p>
           <hr />
           <p>Some thing that no gives fuck</p>
         </div>
@@ -36,9 +37,9 @@ const ResumeDisplay = () => {
         <div>
           <p className="font-medium mt-6 ">PROJECTS</p>
           <hr />
-          <p>Project Name ________ <p>About project ________ Github link _____ </p> </p><br/>
-          <p>Project Name ________ <p>About project ________ Github link _____ </p> </p> <br/>
-          <p>Project Name ________ <p>About project ________ Github link _____ </p> </p><br/>
+          <p>Project Name ________ <p>About project ________ Github link _____ </p> </p><br />
+          <p>Project Name ________ <p>About project ________ Github link _____ </p> </p> <br />
+          <p>Project Name ________ <p>About project ________ Github link _____ </p> </p><br />
         </div>
 
         <div>

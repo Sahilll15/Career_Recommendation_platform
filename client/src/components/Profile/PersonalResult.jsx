@@ -1,6 +1,7 @@
 import React from "react";
 
 const PersonalResult = () => {
+
   const results = [
     { subject: "Math", score: 90 },
     { subject: "Science", score: 85 },
@@ -28,6 +29,7 @@ const PersonalResult = () => {
           <i className="fas fa-file-download"></i> 
         </button>
       </div>
+
     </div>
   );
 };

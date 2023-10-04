@@ -3,6 +3,7 @@ import { NavLink } from 'react-router-dom'
 import { loginUser } from '../../redux/Auth/authActions'
 import { useDispatch, useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
+import { getLoggedInUser } from '../../redux/Auth/authActions'
 
 const Login = () => {
   const dispatch = useDispatch()
@@ -23,12 +24,10 @@ const Login = () => {
 
     if (response.meta.requestStatus === "fulfilled") {
       navigate('/');
-      window.location.reload();
+      await dispatch(getLoggedInUser());
+
     }
-
-
   }
-
   return (
     <div className="bg-gray-100">
       <div className="flex justify-center items-center h-screen">
