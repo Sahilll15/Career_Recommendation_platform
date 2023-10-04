@@ -11,8 +11,9 @@ const categorySchema = mongoose.Schema({
     description: {
         type: String
     },
-    relatedSkills: [{ name: { type: String } }]
-}, { timestamps: true });
+    relatedSkills: [{name:{type: String}}],
+    tags: [String]
+},{timestamps: true});
 
 
 const Category = mongoose.model('Category', categorySchema);

@@ -1,6 +1,6 @@
 const { Group, GroupDiscussion } = require('../models/group.model')
 const User = require('../models/user.models')
-const { nanoid } = require('nanoid');
+
 const AWS = require('aws-sdk');
 
 

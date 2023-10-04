@@ -23,7 +23,19 @@ const userSchema = mongoose.Schema({
     },
     verificationToken: {
         type: String,
-    }
+    },
+    intrestedCategory: [
+        {
+            name: {
+                type: mongoose.Types.ObjectId,
+                ref: "Category"
+            },
+
+
+        },
+    ],
+
+
 }, {
     timestamps: true
 })
