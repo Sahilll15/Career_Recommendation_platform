@@ -5,6 +5,7 @@ import Login from './pages/Auth/Login';
 import Register from './pages/Auth/Register';
 import SideBar from './components/Sidebar/Sidebar';
 import Resume from './pages/Resume';
+import Profile from './pages/Profile/Profile';
 
 
 function App() {
@@ -16,6 +17,8 @@ function App() {
         <Route path="/register" element={<Register />} />
         <Route path="/sidebar" element={<SideBar />} />
         <Route path="/resume" element={<Resume />} />
+        <Route path="/profile" element={<Profile />} />
+
 
       </Routes>
     </Router>
