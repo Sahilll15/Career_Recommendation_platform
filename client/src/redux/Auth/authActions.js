@@ -90,14 +90,14 @@ export const sendResetPassword = createAsyncThunk(
 
 export const resetPassword = createAsyncThunk(
     'user/resetpassword',
-    async (formData, { rejectWithValue }) => {
+    async ({ email, otpFormData }, { rejectWithValue }) => {
         try {
-            const response = await axios.put(
+            const response = await axios.post(
                 `${host}/api/v1/auth/resetpassword`,
                 {
-                    email: formData.email,
-                    password: formData.newPassword,
-                    otpCode: formData.otp,
+                    email: email,
+                    password: otpFormData.password,
+                    otpCode: otpFormData.otp,
 
                 }
             );
@@ -118,3 +118,30 @@ export const resetPassword = createAsyncThunk(
 
 
 
+
+
+export const getLoggedInUser = createAsyncThunk(
+    'user/getloggedinuser',
+    async (_, { rejectWithValue }) => {
+        try {
+            const response = await axios.get(
+                `${host}/api/v1/auth/getloggedinuser/`,
+                {
+                    headers: {
+                        'Content-Type': 'application/json',
+                        Authorization: `Bearer ${localStorage.getItem('token')}`,
+                    },
+                }
+            );
+            if (response.status === 200) {
+                console.log(response.data);
+                return response.data;
+            } else {
+                console.log('error');
+                return rejectWithValue(response.data.message);
+            }
+        } catch (error) {
+            return rejectWithValue(error.response?.data?.message);
+        }
+    }
+)
