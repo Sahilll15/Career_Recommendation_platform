@@ -7,13 +7,32 @@ const userInteresetSchema = mongoose.Schema({
         ref: "User"
     },
 
-    interests:{
+    interestCategory:[{              //For recommending Tech courses and Jobs
         type:mongoose.Types.ObjectId,
         ref: "Category"
-    },
+    }],
 
-    strength: [String],
-    personalityTraits: [String]
+    personalityTraits: [{
+        name:{
+            type: mongoose.Types.ObjectId,         //For recommending personality development courses
+            ref: "Category"
+        },
+        score:{
+            type: Number
+        }
+    }],
+
+    interestShownViaTags:[String],  //For recommending via tags
+
+    quizScore:[{
+        quiz:{
+            type: mongoose.Types.ObjectId,
+            ref: "Quiz"
+        },
+        scored:{
+            type:Number
+        }
+    }]
 })
 
 

@@ -40,6 +40,9 @@ const articleSchema = mongoose.Schema({
         name:{
             type: String,
         },
+        description:{
+            type: String,
+        },
         url:{
             type: String
         }
@@ -49,8 +52,8 @@ const articleSchema = mongoose.Schema({
         type: String
     },
 
-    keyWordsToRecommend:{
-        type:String
+    tags:{
+        type:[String]
     }
 
 }, {timestamps: true});
