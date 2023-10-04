@@ -5,11 +5,11 @@ import "../../css/Sidebar.css";
 
 export const SideBar = () => {
 
-    // const toggleDropdown = () => {
-    //     setDropdownOpen(!isDropdownOpen);
-    //   };
+  // const toggleDropdown = () => {
+  //     setDropdownOpen(!isDropdownOpen);
+  //   };
 
- 
+
 
   return (
     <div>
@@ -28,8 +28,8 @@ export const SideBar = () => {
                 // src={user?.avatar?.url}
 
                 className="w-[40px] h-[40px] rounded-full border  "
-                  
-                 
+
+
 
 
               />
@@ -48,11 +48,11 @@ export const SideBar = () => {
               placeholder="Find people"
               name="username"
               className="text-[15px] ml-4 w-full bg-transparent focus:outline-none"
-              
+
             />
           </div>
           <div className="my-2 bg-gray-600 h-[1px]" />
-           
+
 
           <NavLink to={"/"}>
             <div className="p-2.5 mt-3 flex items-center rounded-md px-4 duration-300 cursor-pointer hover:bg-blue-600 text-white">
@@ -72,7 +72,7 @@ export const SideBar = () => {
             </div>
           </NavLink>
 
-          
+
           <NavLink to={'/profile'}>
             <div className="p-2.5 mt-3 flex items-center rounded-md px-4 duration-300 cursor-pointer hover:bg-blue-600 text-white">
               <i class="bi bi-person-circle"></i>
@@ -118,7 +118,7 @@ export const SideBar = () => {
 
           <div
             className="flex items-center p-2.5 mt-3 rounded-md px-4 duration-300 cursor-pointer hover:bg-blue-600 text-white"
-            // onClick={toggleDropdown}
+          // onClick={toggleDropdown}
           >
             <i className="bi bi-person-square"></i>
             <div className="flex justify-between items-center w-full ml-4">
@@ -138,10 +138,10 @@ export const SideBar = () => {
 
           <div
 
-            // className={`text-left mt-2 w-4/5 mx-auto  ${isDropdownOpen ? "block" : "hidden"
-            //   }`}
+          // className={`text-left mt-2 w-4/5 mx-auto  ${isDropdownOpen ? "block" : "hidden"
+          //   }`}
 
-            // id="submenu"
+          // id="submenu"
           >
             {/* {groupsJoined?.map((group) => (
               <NavLink
@@ -172,7 +172,7 @@ export const SideBar = () => {
 
           <div
             className="p-2.5 mt-3 flex items-center rounded-md px-4 duration-300 cursor-pointer hover:bg-blue-600 text-white"
-            // onClick={logout}
+          // onClick={logout}
           >
             <i className="bi bi-box-arrow-in-right" />
             <span className="text-[15px] ml-4 text-gray-200 font-bold">
