@@ -13,6 +13,7 @@ const quizRoutes = require('./routes/quiz.routes')
 
 const resumeRoutes = require('./routes/resume.routes')
 
+
 const app = express()
 app.use(cors())
 app.use(bodyParser.json())
