@@ -28,9 +28,14 @@ const App = () => {
         <Routes>
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
+
           <Route path="/forgot" element={<Forgot />} />
           
           
+
+
+
+
 
 
 
@@ -71,7 +76,7 @@ const App = () => {
                   <div className="flex-grow">
                     <Toaster richColors />
                     <PrivateRoutes />
-                   
+
 
                   </div>
                 </div>
