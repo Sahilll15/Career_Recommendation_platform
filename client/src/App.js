@@ -10,7 +10,7 @@ import { Toaster, toast } from 'sonner'
 import { ToastContainer } from 'react-toastify';
 import Jobs from './pages/Jobs';
 import Home from './pages/Home';
-
+import Loader from './components/Loader';
 
 
 
@@ -26,6 +26,7 @@ const App = () => {
 
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
+
 
 
 

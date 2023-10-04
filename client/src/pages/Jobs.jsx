@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import MainLayout from '../components/MainLayout';
 import axios from 'axios';
-
+import Loader from '../components/Loader';
 
 const Jobs = () => {
     const [jobs, setJobs] = useState([]);
@@ -32,7 +32,7 @@ const Jobs = () => {
 
     useEffect(() => {
 
-        fetchJobs();
+        // fetchJobs();
     }, []);
 
     useEffect(() => {
@@ -40,19 +40,24 @@ const Jobs = () => {
         console.log('jobs', jobs);
     }, [jobs]);
 
+    if (jobs?.length === 0) {
+        return (
+            <div className="flex flex-col justify-center items-center h-screen ">
+                <Loader />
+            </div>
+        )
+
+    }
 
     return (
         <MainLayout>
             <h1 className='text-center mt-10 text-4xl'>Suggested jobs</h1>
             <div className="container mx-auto px-4 py-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 gap-4">
-                {jobs?.length === 0 ?
-                    <div >Loading...</div> :
-
-                    Array.isArray(jobs) &&
+                {Array.isArray(jobs) &&
                     jobs?.map((job, index) => (
                         <div
                             key={index}
-                            className="bg-blue-100 rounded-lg shadow-lg p-4"
+                            className="bg-blue-100 rounded-lg shadow-lg p-4" // Removed width classes
                         >
                             <h1 className="text-2xl font-semibold text-blue-600 mb-2">
                                 {job.job_title}
