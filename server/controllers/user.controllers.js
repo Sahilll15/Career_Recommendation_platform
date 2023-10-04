@@ -8,6 +8,20 @@ const OTP = require('../models/otp.models')
 const { generateOTP, resetPasswordEmail } = require('../utils/email')
 
 
+const getLoggedinUser = async (req, res) => {
+    try {
+        const user = req.user.id;
+        const ExistingUser = await User.findById(user).select('-password');
+        if (!ExistingUser) {
+            return res.status(404).json({ message: "User not found" })
+        } else {
+            res.status(200).json({ user: ExistingUser, message: "success" })
+        }
+    } catch (error) {
+        res.status(500).json({ message: error.message })
+    }
+}
+
 const register = async (req, res) => {
     const { username, email, password } = req.body;
     try {
@@ -61,6 +75,7 @@ const login = (req, res) => {
                     }
                     res.status(200).json({
                         token,
+                        message: "Login successfull",
                         user: {
                             id: user._id,
                             username: user.username,
@@ -68,6 +83,8 @@ const login = (req, res) => {
                         }
                     })
                 })
+
+
             })
         })
     } catch (error) {
@@ -215,7 +232,8 @@ module.exports = {
     verifyemail,
     resendVerificatoin,
     sendResetPasswordEmail,
-    resetPassword
+    resetPassword,
+    getLoggedinUser
 
 }
 
