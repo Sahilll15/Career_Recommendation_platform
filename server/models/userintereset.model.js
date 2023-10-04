@@ -22,7 +22,17 @@ const userInteresetSchema = mongoose.Schema({
         }
     }],
 
-    interestShownViaTags:[String]  //For recommending via tags
+    interestShownViaTags:[String],  //For recommending via tags
+
+    quizScore:[{
+        quiz:{
+            type: mongoose.Types.ObjectId,
+            ref: "Quiz"
+        },
+        scored:{
+            type:Number
+        }
+    }]
 })
 
 
