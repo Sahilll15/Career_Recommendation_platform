@@ -34,7 +34,7 @@ const Course = () => {
   return (
     <ProfileLayout>
       <div>
-        <section className="p-4" id="jobs">
+        <section className="p-4 min-h-screen" id="jobs">
           <div className="container mx-auto grid grid-cols-1 sm:grid-cols-3 gap-4">
             {coursesData.map((course) => (
               <div key={course.id} className="bg-white rounded-lg shadow p-4 relative h-[225px]">
