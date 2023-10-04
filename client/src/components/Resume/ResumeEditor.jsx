@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 
 const ResumeEditor = () => {
+
   return (
     <div className="">
       <form>
@@ -187,6 +188,7 @@ const ResumeEditor = () => {
           </div>
         </div>
 
+
         <div className="border-b border-gray-900/10 mt-6">
           <h2 className="text-base font-semibold leading-7 text-white">
             Work Experience
@@ -364,7 +366,7 @@ const ResumeEditor = () => {
           </div>
         </div>
 
-        
+
 
         <div className=" flex items-center justify-end gap-x-6">
           <button
