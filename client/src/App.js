@@ -5,7 +5,6 @@ import Register from './pages/Auth/Register';
 import Sidebar from './components/Sidebar/Sidebar';
 import PrivateRoutes from './utils/PrivateRoutes';
 import { useDispatch, useSelector } from 'react-redux';
-import { getLoggedInUser } from './redux/Auth/authSlice';
 import { Toaster, toast } from 'sonner'
 import { ToastContainer } from 'react-toastify';
 import Jobs from './pages/Jobs';
@@ -16,12 +15,21 @@ import Suggestion from './pages/Suggestion';
 import Forgot from './pages/Auth/Forgot';
 
 import Home from './pages/Home';
+import Chat from './pages/Chat';
+import GroupDiscussion from './pages/GroupDescussion';
+import { getLoggedInUser } from './redux/Auth/authActions';
 
 
 
 
 const App = () => {
 
+  const dispatch = useDispatch()
+
+  useEffect(() => {
+    dispatch(getLoggedInUser())
+  }
+  )
 
   return (
     <>
@@ -33,14 +41,6 @@ const App = () => {
           <Route path="/register" element={<Register />} />
 
           <Route path="/forgot" element={<Forgot />} />
-          
-          
-
-
-
-
-
-
 
 
           <Route
@@ -58,13 +58,13 @@ const App = () => {
               </>
             }
           >
-
             <Route path="/" element={<Home />} />
 
             <Route path="/profile" element={<Profile />} />
 
-
+            <Route path="/chat" element={<Chat />} />
             <Route path="/jobs" element={<Jobs />} />
+            <Route path="/groupDiscussion/:id" element={<GroupDiscussion />} />
 
           </Route>
 
