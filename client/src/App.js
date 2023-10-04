@@ -14,11 +14,12 @@ import Suggestion from './pages/Suggestion';
 import Forgot from './pages/Auth/Forgot';
 
 import Quiz from './components/Quiz';
-
+import Home from './pages/Home'
 
 import Chat from './pages/Chat';
 import GroupDiscussion from './pages/GroupDescussion';
 import { getLoggedInUser } from './redux/Auth/authActions';
+import Land from './pages/Landing';
 
 
 
@@ -91,6 +92,7 @@ const App = () => {
             <Route path='/quiz' element={<Quiz />} />
             <Route path="/sug" element={<Suggestion />} />
             <Route path="/resume" element={<Resume />} />
+            <Route path="Land" element={<Land />}/>
 
 
 
