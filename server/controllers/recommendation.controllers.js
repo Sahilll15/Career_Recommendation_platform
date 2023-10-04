@@ -3,6 +3,8 @@ const Category = require('../models/category.model');
 const User = require('../models/user.models');
 const UserInterests = require('../models/userintereset.model');
 
+
+
 function recommendArticles(userProfile, articles) {
     const recommendedArticles = [];
 
@@ -59,5 +61,8 @@ const getRecmndArticles = async (req, res) => {
         res.status(500).json({ message: `Something went wrong: ${error.message}` });
     }
 }
+
+
+
 
 module.exports = { getRecmndArticles };
