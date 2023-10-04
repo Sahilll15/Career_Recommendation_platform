@@ -47,8 +47,11 @@ const articleSchema = mongoose.Schema({
 
     trendInMarket:{
         type: String
+    },
+
+    keyWordsToRecommend:{
+        type:String
     }
-    
 
 }, {timestamps: true});
 
