@@ -8,16 +8,20 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Toaster, toast } from 'sonner'
 import { ToastContainer } from 'react-toastify';
 import Jobs from './pages/Jobs';
-
+import Home from './pages/Home'
 import Profile from './pages/Profile'
 import Resume from './pages/Resume'
 import Suggestion from './pages/Suggestion';
 import Forgot from './pages/Auth/Forgot';
 
+import Quiz from './components/Quiz';
+
+
 import Home from './pages/Home';
 import Chat from './pages/Chat';
 import GroupDiscussion from './pages/GroupDescussion';
 import { getLoggedInUser } from './redux/Auth/authActions';
+
 
 
 
@@ -63,8 +67,10 @@ const App = () => {
             <Route path="/profile" element={<Profile />} />
 
             <Route path="/chat" element={<Chat />} />
+
             <Route path="/jobs" element={<Jobs />} />
             <Route path="/groupDiscussion/:id" element={<GroupDiscussion />} />
+
 
           </Route>
 
@@ -84,10 +90,13 @@ const App = () => {
               </>
             }
           >
+          <Route path='/quiz' element={<Quiz/>}/>
+          <Route path="/sug" element={<Suggestion />} />
+          <Route path="/resume" element={<Resume />} />
 
-            <Route path="/suggestion" element={<Register />} />
-            <Route path="/sug" element={<Suggestion />} />
-            <Route path="/resume" element={<Resume />} />
+
+          
+
 
           </Route>
         </Routes>

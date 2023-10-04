@@ -65,6 +65,24 @@ export const SideBar = () => {
             </div>
           </NavLink>
 
+          <NavLink to={"/jobs"}>
+            <div className="p-2.5 mt-3 flex items-center rounded-md px-4 duration-300 cursor-pointer hover:bg-blue-600 text-white">
+              <i className="bi bi-house-door-fill" />
+              <span className="text-[15px] ml-4 text-gray-200 font-bold">
+                Jobs
+              </span>
+            </div>
+          </NavLink>
+
+          <NavLink to={"/courses"}>
+            <div className="p-2.5 mt-3 flex items-center rounded-md px-4 duration-300 cursor-pointer hover:bg-blue-600 text-white">
+              <i className="bi bi-house-door-fill" />
+              <span className="text-[15px] ml-4 text-gray-200 font-bold">
+                Courses
+              </span>
+            </div>
+          </NavLink>
+
           <NavLink to={"/chat"}>
             <div className="p-2.5 mt-3 flex items-center rounded-md px-4 duration-300 cursor-pointer hover:bg-blue-600 text-white">
               <i class="bi bi-people"></i>
@@ -83,14 +101,7 @@ export const SideBar = () => {
               </span>
             </div>
           </NavLink>
-          <NavLink to={"/boost"}>
-            <div className="p-2.5 mt-3 flex items-center rounded-md px-4 duration-300 cursor-pointer hover:bg-blue-600 text-white">
-              <i class="bi bi-plus-circle"></i>
-              <span className="text-[15px] ml-4 text-gray-200 font-bold">
-                Boost Post
-              </span>
-            </div>
-          </NavLink>
+          
           <NavLink to={"/userstatistics"}>
             <div className="p-2.5 mt-3 flex items-center rounded-md px-4 duration-300 cursor-pointer hover:bg-blue-600 text-white">
               <i class="bi bi-bar-chart"></i>
@@ -99,22 +110,7 @@ export const SideBar = () => {
               </span>
             </div>
           </NavLink>
-          <NavLink to={"/lend"}>
-            <div className="p-2.5 mt-3 flex items-center rounded-md px-4 duration-300 cursor-pointer hover:bg-blue-600 text-white">
-              <i class="bi bi-piggy-bank-fill"></i>
-              <span className="text-[15px] ml-4 text-gray-200 font-bold">
-                Fundraisers
-              </span>
-            </div>
-          </NavLink>
-          <NavLink to={"/setting"}>
-            <div className="p-2.5 mt-3 flex items-center rounded-md px-4 duration-300 cursor-pointer hover:bg-blue-600 text-white">
-              <i class="bi bi-gear"></i>
-              <span className="text-[15px] ml-4 text-gray-200 font-bold">
-                Setting
-              </span>
-            </div>
-          </NavLink>
+          
 
           <div className="my-4 bg-gray-600 h-[1px]" />
 

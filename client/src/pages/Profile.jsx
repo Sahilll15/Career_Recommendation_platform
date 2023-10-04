@@ -22,6 +22,7 @@ const Profile = () => {
 
         
       </div>
+      <br/><br/><br/>
     </ProfileLayout>
   );
 };
