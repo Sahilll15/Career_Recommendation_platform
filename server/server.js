@@ -6,6 +6,9 @@ const myDb = require('./db');
 const userRoutes = require('./routes/user.routes');
 const categoryRoutes = require('./routes/categoy.routes');
 const articleRoutes = require('./routes/articles.routes')
+const interestRoutes = require('./routes/userinterests.routes')
+const recmndRoutes = require('./routes/rcmnd.routes')
+
 
 const app = express()
 app.use(cors())
@@ -19,6 +22,10 @@ myDb.myDb();
 app.use('/api/v1/auth/', userRoutes);
 app.use('/api/v1/category', categoryRoutes);
 app.use('/api/v1/articles', articleRoutes);
+app.use('/api/v1/interests', interestRoutes);
+app.use('/api/v1/rcmnd', recmndRoutes);
+
+
 
 app.listen(PORT, () => {
     console.log(`Server listening on ${PORT}`)

@@ -11,7 +11,8 @@ const categorySchema = mongoose.Schema({
     description:{
         type: String
     },
-    relatedSkills: [{name:{type: String}}]
+    relatedSkills: [{name:{type: String}}],
+    tags: [String]
 },{timestamps: true});
 
 
