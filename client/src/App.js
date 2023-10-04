@@ -15,6 +15,10 @@ import Resume from './pages/Resume'
 import Suggestion from './pages/Suggestion';
 import Forgot from './pages/Auth/Forgot';
 
+import Home from './pages/Home';
+
+
+
 
 const App = () => {
 
@@ -27,9 +31,14 @@ const App = () => {
         <Routes>
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
+
           <Route path="/forgot" element={<Forgot />} />
           
           
+
+
+
+
 
 
 
@@ -53,7 +62,7 @@ const App = () => {
             <Route path="/" element={<Home />} />
 
             <Route path="/profile" element={<Profile />} />
-            
+
 
             <Route path="/jobs" element={<Jobs />} />
 
@@ -68,7 +77,7 @@ const App = () => {
                   <div className="flex-grow">
                     <Toaster richColors />
                     <PrivateRoutes />
-                   
+
 
                   </div>
                 </div>
@@ -77,7 +86,8 @@ const App = () => {
           >
 
             <Route path="/suggestion" element={<Register />} />
-          <Route path="/sug" element={<Suggestion />} />
+            <Route path="/sug" element={<Suggestion />} />
+            <Route path="/resume" element={<Resume />} />
 
           </Route>
         </Routes>
