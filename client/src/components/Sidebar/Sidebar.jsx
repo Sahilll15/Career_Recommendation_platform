@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from "react";
 
 import { NavLink } from "react-router-dom";
-import "../css/Sidebar.css";
+import "../../css/Sidebar.css";
 
 export const SideBar = () => {
 
-    const toggleDropdown = () => {
-        setDropdownOpen(!isDropdownOpen);
-      };
+    // const toggleDropdown = () => {
+    //     setDropdownOpen(!isDropdownOpen);
+    //   };
 
  
 
@@ -24,8 +24,8 @@ export const SideBar = () => {
           <div className="text-gray-100 text-xl">
             <div className="p-2.5 mt-1 flex items-center">
               <img
-                alt={user?.badges}
-                src={user?.avatar?.url}
+                // alt={user?.badges}
+                // src={user?.avatar?.url}
 
                 className="w-[40px] h-[40px] rounded-full border  "
                   
@@ -72,17 +72,7 @@ export const SideBar = () => {
             </div>
           </NavLink>
 
-          <NavLink to={'/notification'}>
-            <div className={`p-2.5 mt-3 flex items-center rounded-md px-4 duration-300 cursor-pointer hover:bg-${hasNotifications ? 'white' : 'blue-600'} text-${hasNotifications ? 'blue-500' : 'white'}`}>
-              <i class="bi bi-bell"></i>
-              <span className={`text-[15px] ml-4 font-bold ${hasNotifications ? 'text-blue-600' : 'text-gray-200'}`}>
-                Notification
-              </span>
-              &nbsp;&nbsp;
-              {notifications?.length}
-            </div>
-          </NavLink>
-
+          
           <NavLink to={'/profile'}>
             <div className="p-2.5 mt-3 flex items-center rounded-md px-4 duration-300 cursor-pointer hover:bg-blue-600 text-white">
               <i class="bi bi-person-circle"></i>
@@ -128,7 +118,7 @@ export const SideBar = () => {
 
           <div
             className="flex items-center p-2.5 mt-3 rounded-md px-4 duration-300 cursor-pointer hover:bg-blue-600 text-white"
-            onClick={toggleDropdown}
+            // onClick={toggleDropdown}
           >
             <i className="bi bi-person-square"></i>
             <div className="flex justify-between items-center w-full ml-4">
@@ -137,8 +127,7 @@ export const SideBar = () => {
               </span>
               <span
 
-                className={`text-base ${isDropdownOpen ? "transform rotate-180" : ""
-                  }`}
+                className="text-base transform rotate-180"
 
                 id="arrow"
               >
@@ -149,10 +138,10 @@ export const SideBar = () => {
 
           <div
 
-            className={`text-left mt-2 w-4/5 mx-auto  ${isDropdownOpen ? "block" : "hidden"
-              }`}
+            // className={`text-left mt-2 w-4/5 mx-auto  ${isDropdownOpen ? "block" : "hidden"
+            //   }`}
 
-            id="submenu"
+            // id="submenu"
           >
             {/* {groupsJoined?.map((group) => (
               <NavLink
@@ -183,7 +172,7 @@ export const SideBar = () => {
 
           <div
             className="p-2.5 mt-3 flex items-center rounded-md px-4 duration-300 cursor-pointer hover:bg-blue-600 text-white"
-            onClick={logout}
+            // onClick={logout}
           >
             <i className="bi bi-box-arrow-in-right" />
             <span className="text-[15px] ml-4 text-gray-200 font-bold">
