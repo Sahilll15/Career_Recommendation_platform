@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import MainLayout from '../components/MainLayout';
+import MainLayout from '../components/Layout/MainLayout';
 import axios from 'axios';
 import Loader from '../components/Loader';
 
