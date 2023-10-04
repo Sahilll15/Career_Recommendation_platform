@@ -11,6 +11,7 @@ import { ToastContainer } from 'react-toastify';
 import Home from './pages/Home';
 import Profile from './pages/Profile'
 import Resume from './pages/Resume'
+import Suggestion from './pages/Suggestion';
 
 
 
@@ -71,7 +72,8 @@ function App() {
               </>
             }
           >
-          <Route path="/resume" element={<Resume />} />
+            <Route path="/suggestion" element={<Register />} />
+          <Route path="/sug" element={<Suggestion />} />
           </Route>
         </Routes>
         {/* <BackToTopButton /> */}
