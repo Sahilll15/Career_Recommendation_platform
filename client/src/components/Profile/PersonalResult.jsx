@@ -1,6 +1,7 @@
 import React from "react";
 
 const PersonalResult = () => {
+
   const results = [
     { subject: "Math", score: 90 },
     { subject: "Science", score: 85 },
