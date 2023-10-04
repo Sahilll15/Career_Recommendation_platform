@@ -90,12 +90,12 @@ const App = () => {
               </>
             }
           >
-          <Route path='/quiz' element={<Quiz/>}/>
-          <Route path="/sug" element={<Suggestion />} />
-          <Route path="/resume" element={<Resume />} />
+            <Route path='/quiz' element={<Quiz />} />
+            <Route path="/sug" element={<Suggestion />} />
+            <Route path="/resume" element={<Resume />} />
 
 
-          
+
 
 
           </Route>
