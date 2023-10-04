@@ -8,14 +8,13 @@ import { useDispatch, useSelector } from 'react-redux';
 import { getLoggedInUser } from './redux/Auth/authSlice';
 import { Toaster, toast } from 'sonner'
 import { ToastContainer } from 'react-toastify';
+import Jobs from './pages/Jobs';
 import Home from './pages/Home';
+import Loader from './components/Loader';
 
 
 
-
-function App() {
-
-
+const App = () => {
 
 
   return (
@@ -30,6 +29,7 @@ function App() {
 
 
 
+
           <Route
             path="/"
             element={
@@ -37,8 +37,6 @@ function App() {
                 <div className="flex">
 
                   <Sidebar />
-
-
                   <div className="flex-grow">
                     <ToastContainer richColors />
                     <PrivateRoutes />
@@ -49,6 +47,7 @@ function App() {
           >
 
             <Route path="/" element={<Home />} />
+            <Route path="/jobs" element={<Jobs />} />
           </Route>
 
           <Route
