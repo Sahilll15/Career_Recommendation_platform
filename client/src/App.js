@@ -1,11 +1,76 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect } from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Login from './pages/Auth/Login';
+import Register from './pages/Auth/Register';
+import Sidebar from './components/Sidebar/Sidebar';
+import PrivateRoutes from './utils/PrivateRoutes';
+import { useDispatch, useSelector } from 'react-redux';
+import { getLoggedInUser } from './redux/Auth/authSlice';
+import { Toaster, toast } from 'sonner'
+import { ToastContainer } from 'react-toastify';
+import Home from './pages/Home';
+
+
+
 
 function App() {
+
+
+
+
   return (
-    <h1 className="text-3xl font-bold underline text-blue-900">
-      Hello world!
-    </h1>
+    <>
+
+      <Toaster richColors />
+      <Router>
+        <Routes>
+
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+
+
+
+          <Route
+            path="/"
+            element={
+              <>
+                <div className="flex">
+
+                  <Sidebar />
+
+
+                  <div className="flex-grow">
+                    <ToastContainer richColors />
+                    <PrivateRoutes />
+                  </div>
+                </div>
+              </>
+            }
+          >
+
+            <Route path="/" element={<Home />} />
+          </Route>
+
+          <Route
+            path="/"
+            element={
+              <>
+                <div className="flex">
+
+                  <div className="flex-grow">
+                    <Toaster richColors />
+                    <PrivateRoutes />
+                  </div>
+                </div>
+              </>
+            }
+          >
+
+          </Route>
+        </Routes>
+        {/* <BackToTopButton /> */}
+      </Router>
+    </>
   );
 }
 
