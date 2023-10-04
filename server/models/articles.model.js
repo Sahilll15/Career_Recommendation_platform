@@ -40,6 +40,9 @@ const articleSchema = mongoose.Schema({
         name:{
             type: String,
         },
+        description:{
+            type: String,
+        },
         url:{
             type: String
         }

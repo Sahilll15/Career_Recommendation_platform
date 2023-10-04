@@ -8,6 +8,8 @@ const categoryRoutes = require('./routes/categoy.routes');
 const articleRoutes = require('./routes/articles.routes')
 const interestRoutes = require('./routes/userinterests.routes')
 const recmndRoutes = require('./routes/rcmnd.routes')
+const quizRoutes = require('./routes/quiz.routes')
+
 
 const resumeRoutes = require('./routes/resume.routes')
 
@@ -25,9 +27,8 @@ app.use('/api/v1/category', categoryRoutes);
 app.use('/api/v1/articles', articleRoutes);
 app.use('/api/v1/interests', interestRoutes);
 app.use('/api/v1/rcmnd', recmndRoutes);
-
-
-app.use('/api/v1/resume', resumeRoutes)
+app.use('/api/v1/resume', resumeRoutes);
+app.use('/api/v1/quiz', quizRoutes);
 
 app.listen(PORT, () => {
     console.log(`Server listening on ${PORT}`)
