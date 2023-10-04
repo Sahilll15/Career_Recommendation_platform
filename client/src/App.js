@@ -15,7 +15,7 @@ import Forgot from './pages/Auth/Forgot';
 
 import Quiz from './components/Quiz';
 import Home from './pages/Home'
-
+import BlogPage from './pages/Blog';
 import Chat from './pages/Chat';
 import GroupDiscussion from './pages/GroupDescussion';
 import { getLoggedInUser } from './redux/Auth/authActions';
@@ -68,6 +68,8 @@ const App = () => {
             <Route path="/chat" element={<Chat />} />
 
             <Route path="/jobs" element={<Jobs />} />
+            <Route path="/blog" element={<BlogPage />} />
+
             <Route path="/groupDiscussion/:id" element={<GroupDiscussion />} />
 
 
