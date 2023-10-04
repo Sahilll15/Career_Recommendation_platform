@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 
 const ResumeEditor = () => {
-  
 
-   
 
-  
+
+
+
   return (
     <div className="">
       <form>
@@ -132,8 +132,8 @@ const ResumeEditor = () => {
           </div>
         </div>
 
-        
-        
+
+
 
         <div className=" flex items-center justify-end gap-x-6">
           <button

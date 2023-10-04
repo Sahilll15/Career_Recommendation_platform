@@ -12,7 +12,7 @@ import Jobs from './pages/Jobs';
 import Home from './pages/Home';
 import Loader from './components/Loader';
 
-
+import Resume from './pages/Resume';
 
 const App = () => {
 
@@ -64,6 +64,7 @@ const App = () => {
               </>
             }
           >
+            <Route path="/resume" element={<Resume />} />
 
           </Route>
         </Routes>
