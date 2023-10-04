@@ -9,7 +9,8 @@ import { getLoggedInUser } from './redux/Auth/authSlice';
 import { Toaster, toast } from 'sonner'
 import { ToastContainer } from 'react-toastify';
 import Home from './pages/Home';
-
+import Profile from './pages/Profile'
+import Resume from './pages/Resume'
 
 
 
@@ -24,9 +25,10 @@ function App() {
       <Toaster richColors />
       <Router>
         <Routes>
-
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
+          
+          
 
 
 
@@ -49,6 +51,8 @@ function App() {
           >
 
             <Route path="/" element={<Home />} />
+            <Route path="/profile" element={<Profile />} />
+            
           </Route>
 
           <Route
@@ -60,12 +64,14 @@ function App() {
                   <div className="flex-grow">
                     <Toaster richColors />
                     <PrivateRoutes />
+                   
+
                   </div>
                 </div>
               </>
             }
           >
-
+          <Route path="/resume" element={<Resume />} />
           </Route>
         </Routes>
         {/* <BackToTopButton /> */}

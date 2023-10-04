@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import MainLayout from "../../components/MainLayout";
 
-const Profile = () => {
+
+const ProfileForm = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const openModal = () => {
@@ -13,7 +13,8 @@ const Profile = () => {
   };
 
   return (
-    <MainLayout>
+   
+      
       <div>
         <div className="flex justify-center mt-5">
           <div className="inline-flex space-x-4">
@@ -21,13 +22,13 @@ const Profile = () => {
               className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
               onClick={openModal}
             >
-              Assessment 1
+              Personality Assessment 
             </button>
             <button className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">
-              Assessment 2
+              Interest Assesment test
             </button>
             <button className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">
-              Assessment 3
+              Aptitude Test
             </button>
           </div>
         </div>
@@ -149,8 +150,8 @@ const Profile = () => {
           </div>
         )}
       </div>
-    </MainLayout>
+ 
   );
 };
 
-export default Profile;
+export default ProfileForm;
