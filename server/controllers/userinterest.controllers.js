@@ -1,5 +1,6 @@
 const Category = require('../models/category.model');
 const UserInterests = require('../models/userintereset.model');
+const User = require('../models/user.models')
 
 const addInterests = async (req, res) => {
     try {
@@ -11,7 +12,9 @@ const addInterests = async (req, res) => {
         if (relatedCategory && relatedCategory.tags) {
             newUserInterest.interestShownViaTags = newUserInterest.interestShownViaTags.concat(relatedCategory.tags);
         }
-
+        const user = await User.findById(newUserInterest.user);
+        await user.intrestedCategory.push(relatedCategory._id);
+        await user.save()
         // Map tags from personalityTraits
         for (const trait of newUserInterest.personalityTraits) {
             const catg = await Category.findById(trait.name);
