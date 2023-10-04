@@ -83,7 +83,7 @@ const Quiz = () => {
               <div
                 key={index}
                 className={`bg-white p-4 border rounded cursor-pointer ${
-                  selectedAnswer === option ? ' bg-blue-400 text-white' : ''
+                  selectedAnswer === option ? ' bg-blue-600 text-white' : ''
                 }`}
                 onClick={() => handleOptionSelect(option)}
               >
