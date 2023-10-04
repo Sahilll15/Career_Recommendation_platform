@@ -9,11 +9,12 @@ import { getLoggedInUser } from './redux/Auth/authSlice';
 import { Toaster, toast } from 'sonner'
 import { ToastContainer } from 'react-toastify';
 import Jobs from './pages/Jobs';
-
+import Home from './pages/Home'
 import Profile from './pages/Profile'
 import Resume from './pages/Resume'
 import Suggestion from './pages/Suggestion';
 import Forgot from './pages/Auth/Forgot';
+import Quiz from './components/Quiz';
 
 
 const App = () => {
@@ -53,6 +54,8 @@ const App = () => {
             <Route path="/" element={<Home />} />
 
             <Route path="/profile" element={<Profile />} />
+
+            <Route path="/quiz" element={<Quiz />} />
             
 
             <Route path="/jobs" element={<Jobs />} />
@@ -76,7 +79,6 @@ const App = () => {
             }
           >
 
-            <Route path="/suggestion" element={<Register />} />
           <Route path="/sug" element={<Suggestion />} />
 
           </Route>
