@@ -60,10 +60,10 @@ const App = () => {
 
             <Route path="/profile" element={<Profile />} />
 
-            <Route path="/quiz" element={<Quiz />} />
             
 
             <Route path="/jobs" element={<Jobs />} />
+
 
           </Route>
 
@@ -83,8 +83,13 @@ const App = () => {
               </>
             }
           >
-
+          <Route path='/quiz' element={<Quiz/>}/>
           <Route path="/sug" element={<Suggestion />} />
+          <Route path="/resume" element={<Resume />} />
+
+
+          
+
 
           </Route>
         </Routes>
