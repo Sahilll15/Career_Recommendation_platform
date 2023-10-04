@@ -6,13 +6,10 @@ import Sidebar from './components/Sidebar/Sidebar';
 import PrivateRoutes from './utils/PrivateRoutes';
 import { useDispatch, useSelector } from 'react-redux';
 import { getLoggedInUser } from './redux/Auth/authSlice';
-import Resume from './pages/Resume';
-import Profile from './pages/Profile/Profile';
-import { ToastContainer } from 'react-toastify';
-
 import { Toaster, toast } from 'sonner'
-
+import { ToastContainer } from 'react-toastify';
 import Home from './pages/Home';
+
 
 
 
@@ -52,10 +49,6 @@ function App() {
           >
 
             <Route path="/" element={<Home />} />
-            <Route path="/sidebar" element={<SideBar />} />
-            <Route path="/resume" element={<Resume />} />
-            <Route path="/profile" element={<Profile />} />
-
           </Route>
 
           <Route
@@ -82,5 +75,3 @@ function App() {
 }
 
 export default App;
-
-
