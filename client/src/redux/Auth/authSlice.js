@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { registerUser, loginUser } from "./authActions";
+import { registerUser, loginUser, resetPassword, sendResetPassword } from "./authActions";
 
 const initialState = {
     user: null,
@@ -42,6 +42,38 @@ export const authSlice = createSlice({
             state.loading = false;
             state.error = action.payload;
         })
+
+        //reset password
+        builders.addCase(resetPassword.pending, (state, action) => {
+            state.loading = true;
+        })
+
+        builders.addCase(resetPassword.fulfilled, (state, action) => {
+            state.loading = false;
+            state.user = action.payload;
+            state.isAuth = true;
+        })
+        builders.addCase(resetPassword.rejected, (state, action) => {
+            state.loading = false;
+            state.error = action.payload;
+        })
+
+        //send reset password email
+        builders.addCase(sendResetPassword.pending, (state, action) => {
+            state.loading = true;
+        })
+
+        builders.addCase(sendResetPassword.fulfilled, (state, action) => {
+            state.loading = false;
+            state.user = action.payload;
+            state.isAuth = true;
+        })
+        builders.addCase(sendResetPassword.rejected, (state, action) => {
+            state.loading = false;
+            state.error = action.payload;
+        })
+
+
     }
 
 })
