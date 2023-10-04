@@ -1,16 +1,14 @@
-import React from "react";
-import ResumeEditor from "../components/Resume/ResumeEditor";
-import ResumeDisplay from "../components/Resume/ResumeDisplay";
+import React from 'react'
 
-const Resume = () => {
+const UserProfile = () => {
   return (
-    <div className="bg-gray-900 min-h-screen">
+    <div className="bg-gray-800 min-h-screen">
 
 
       <div className="flex flex-col  md:flex-row h-screen">
 
 
-        <div className="md:flex-1  p-6 bg-gray-900">
+        <div className="md:flex-1  p-6 bg-gray-800">
           {/* Content for the left half */}
           <ResumeEditor/>
         </div>
@@ -23,7 +21,7 @@ const Resume = () => {
 
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Resume;
+export default UserProfile

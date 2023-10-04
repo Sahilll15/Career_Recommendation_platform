@@ -2,10 +2,6 @@ import React, { useState } from "react";
 
 const ResumeEditor = () => {
 
-
-
-
-
   return (
     <div className="">
       <form>
@@ -113,6 +109,66 @@ const ResumeEditor = () => {
             </div>
           </div>
 
+          <div className="border-b border-gray-900/10 mt-6">
+          <h2 className="text-base font-semibold leading-7 text-white">
+            EDUCATION
+          </h2>
+          <div className="grid grid-cols-1 gap-x-6 gap-y-4 sm:grid-cols-6">
+            <div className="sm:col-span-2">
+              <label
+                htmlFor="companyName"
+                className="block text-sm font-medium text-white"
+              >
+                10TH MARKS
+              </label>
+              <div className="">
+                <input
+                  type="text"
+                  name="companyName"
+                  id="companyName"
+                  autoComplete="organization"
+                  className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                />
+              </div>
+            </div>
+            <div className="sm:col-span-2">
+              <label
+                htmlFor="role"
+                className="block text-sm font-medium text-white"
+              >
+                12TH MARKS
+              </label>
+              <div className="">
+                <input
+                  type="text"
+                  name="role"
+                  id="role"
+                  autoComplete="role"
+                  className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                />
+              </div>
+            </div>
+            <div className="sm:col-span-2">
+              <label
+                htmlFor="year"
+                className="block text-sm font-medium text-white"
+              >
+                CURRENT AVEGARAGE MARKS
+              </label>
+              <div className="">
+                <input
+                  type="text"
+                  name="year"
+                  id="year"
+                  autoComplete="year"
+                  className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+
+
           <div className="col-span-full">
             <label
               htmlFor="about"
@@ -133,6 +189,183 @@ const ResumeEditor = () => {
         </div>
 
 
+        <div className="border-b border-gray-900/10 mt-6">
+          <h2 className="text-base font-semibold leading-7 text-white">
+            Work Experience
+          </h2>
+          <div className="grid grid-cols-1 gap-x-6 gap-y-4 sm:grid-cols-6">
+            <div className="sm:col-span-2">
+              <label
+                htmlFor="companyName"
+                className="block text-sm font-medium text-white"
+              >
+                Company Name
+              </label>
+              <div className="">
+                <input
+                  type="text"
+                  name="companyName"
+                  id="companyName"
+                  autoComplete="organization"
+                  className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                />
+              </div>
+            </div>
+            <div className="sm:col-span-2">
+              <label
+                htmlFor="role"
+                className="block text-sm font-medium text-white"
+              >
+                Role
+              </label>
+              <div className="">
+                <input
+                  type="text"
+                  name="role"
+                  id="role"
+                  autoComplete="role"
+                  className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                />
+              </div>
+            </div>
+            <div className="sm:col-span-2">
+              <label
+                htmlFor="year"
+                className="block text-sm font-medium text-white"
+              >
+                Year
+              </label>
+              <div className="">
+                <input
+                  type="text"
+                  name="year"
+                  id="year"
+                  autoComplete="year"
+                  className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="border-b border-gray-900/10 mt-6">
+          <h2 className="text-base font-semibold leading-7 text-white">
+            Project
+          </h2>
+          <div className="grid grid-cols-1 gap-x-6 gap-y-4 sm:grid-cols-6">
+            <div className="sm:col-span-2">
+              <label
+                htmlFor="companyName"
+                className="block text-sm font-medium text-white"
+              >
+                Project Name
+              </label>
+              <div className="">
+                <input
+                  type="text"
+                  name="companyName"
+                  id="companyName"
+                  autoComplete="organization"
+                  className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                />
+              </div>
+            </div>
+            <div className="sm:col-span-2">
+              <label
+                htmlFor="role"
+                className="block text-sm font-medium text-white"
+              >
+                About
+              </label>
+              <div className="">
+                <input
+                  type="text"
+                  name="role"
+                  id="role"
+                  autoComplete="role"
+                  className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                />
+              </div>
+            </div>
+            <div className="sm:col-span-2">
+              <label
+                htmlFor="year"
+                className="block text-sm font-medium text-white"
+              >
+                Github Link
+              </label>
+              <div className="">
+                <input
+                  type="text"
+                  name="year"
+                  id="year"
+                  autoComplete="year"
+                  className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="border-b border-gray-900/10 mt-6">
+          <h2 className="text-base font-semibold leading-7 text-white">
+            Awards
+          </h2>
+          <div className="grid grid-cols-1 gap-x-6 gap-y-4 sm:grid-cols-6">
+            <div className="sm:col-span-2">
+              <label
+                htmlFor="companyName"
+                className="block text-sm font-medium text-white"
+              >
+                Position
+              </label>
+              <div className="">
+                <input
+                  type="text"
+                  name="companyName"
+                  id="companyName"
+                  autoComplete="organization"
+                  className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                />
+              </div>
+            </div>
+            <div className="sm:col-span-2">
+              <label
+                htmlFor="role"
+                className="block text-sm font-medium text-white"
+              >
+                Competition name
+              </label>
+              <div className="">
+                <input
+                  type="text"
+                  name="role"
+                  id="role"
+                  autoComplete="role"
+                  className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                />
+              </div>
+            </div>
+            <div className="sm:col-span-2">
+              <label
+                htmlFor="year"
+                className="block text-sm font-medium text-white"
+              >
+                Place/ institute name
+              </label>
+              <div className="">
+                <input
+                  type="text"
+                  name="year"
+                  id="year"
+                  autoComplete="year"
+                  className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+
 
 
         <div className=" flex items-center justify-end gap-x-6">
@@ -150,8 +383,6 @@ const ResumeEditor = () => {
           </button>
         </div>
       </form>
-
-
     </div>
   );
 };
