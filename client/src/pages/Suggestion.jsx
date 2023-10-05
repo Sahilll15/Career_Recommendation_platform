@@ -50,7 +50,8 @@ const Suggestion = () => {
         ))}
       </div>
       <NavLink to="/">
-      <button>Submit</button>
+        
+      <button className='bg-blue-600 rounded-lg text-white px-4'>Submit</button>
       </NavLink>
     </div>
   );

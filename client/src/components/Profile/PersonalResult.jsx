@@ -30,7 +30,7 @@ const PersonalResult = () => {
         <h2 className="text-xl font-bold mb-4 mr-4">Download Assessment Result &nbsp;<i className="fa-solid fa-file-arrow-down text-blue-700 fa-xl"></i></h2>
       </div>
 
-      <NavLink to='https://carrer-compass.netlify.app/form'>
+      <NavLink to='https://cv-host.netlify.app/form'>
       <div className="max-w-md mx-auto bg-white rounded p-6 mt-6 flex items-center">
         <h2 className="text-xl font-bold mb-4 mr-4">Get Your Resume &nbsp;<i className="fa-solid fa-file-arrow-down text-blue-700 fa-xl"></i></h2>
       </div>

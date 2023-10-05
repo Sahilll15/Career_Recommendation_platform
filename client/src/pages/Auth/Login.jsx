@@ -23,7 +23,7 @@ const Login = () => {
     const response = await dispatch(loginUser(formData));
 
     if (response.meta.requestStatus === "fulfilled") {
-      navigate('/');
+      navigate('/sug');
       await dispatch(getLoggedInUser());
 
     }

@@ -6,7 +6,7 @@ const PersonalDetails = () => {
     <div className="flex flex-col items-center justify-center p-4 w-full">
       {/* Profile Box */}
       <div className="max-w-md bg-white rounded-lg shadow-lg p-6 mb-6 w-full">
-        <h1>INTERMIDIATE</h1>
+        <h1>Begineer</h1>
         <div className="flex items-center justify-center mb-4">
           <img
             className="w-20 h-20 object-cover rounded-full"
