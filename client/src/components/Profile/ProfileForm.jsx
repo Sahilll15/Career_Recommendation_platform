@@ -1,8 +1,11 @@
 import React, { useState } from "react";
+import { NavLink } from "react-router-dom";
+
 
 
 const ProfileForm = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  
 
   const openModal = () => {
     setIsModalOpen(true);
@@ -24,12 +27,16 @@ const ProfileForm = () => {
           >
             Personality Assessment
           </button>
+          <NavLink to="/quiz">
           <button className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">
             Interest Assesment test
           </button>
+          </NavLink>
+          <NavLink to="/quiz">
           <button className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">
             Aptitude Test
           </button>
+          </NavLink>
         </div>
       </div>
 

@@ -20,7 +20,11 @@ const Profile = () => {
           </div>
         </div>
 
-        
+        <center>
+          <p className="font-bold">YOUR BLOGS</p>
+        </center>
+
+
       </div>
       <br/><br/><br/>
     </ProfileLayout>
