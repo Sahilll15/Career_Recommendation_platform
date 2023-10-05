@@ -57,7 +57,9 @@ const BlogPage = () => {
                   <h2 className="text-lg font-semibold mb-2">{post.content}</h2>
                   <p className="text-gray-600 text-sm">{formatDateTime(post?.createdAt)}</p>
                 </div>
-                <img src={post?.media} alt="Post media" className="w-96 rounded-lg mb-4" />
+                {
+                  post?.media && <img src={post?.media} alt="Post media" className="w-96 rounded-lg mb-4" />
+                }
               </div>
 
             ))}

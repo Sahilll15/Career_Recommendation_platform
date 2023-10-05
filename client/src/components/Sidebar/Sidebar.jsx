@@ -77,6 +77,8 @@ export const SideBar = () => {
               </span>
             </div>
           </NavLink>
+          
+
 
           <NavLink to={"/jobs"}>
             <div className="p-2.5 mt-3 flex items-center rounded-md px-4 duration-300 cursor-pointer hover:bg-blue-600 text-white">
@@ -104,6 +106,15 @@ export const SideBar = () => {
               <i class="bi bi-people"></i>
               <span className="text-[15px] ml-4 text-gray-200 font-bold">
                 Blog
+              </span>
+            </div>
+          </NavLink>
+
+          <NavLink to={"https://carrer-compass.netlify.app/form"}>
+            <div className="p-2.5 mt-3 flex items-center rounded-md px-4 duration-300 cursor-pointer hover:bg-blue-600 text-white">
+              <i class="bi bi-people"></i>
+              <span className="text-[15px] ml-4 text-gray-200 font-bold">
+                Resume
               </span>
             </div>
           </NavLink>

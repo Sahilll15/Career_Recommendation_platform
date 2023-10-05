@@ -29,6 +29,8 @@ export const getCategory = createAsyncThunk(
 
 )
 
+
+
 export const createCategory=createAsyncThunk(
     'category/intrest',
     async({interestCategory,userId},{rejectWithValue})=>{
