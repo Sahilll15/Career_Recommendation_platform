@@ -2,9 +2,22 @@ import React, { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 import "../../css/Sidebar.css";
 import { useNavigate } from "react-router-dom";
+import { useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
+import { getCommunityById } from "../../redux/community/CommunityAcitions";
+import { getCommunityDiscussion } from "../../redux/community/CommunityAcitions";
+import { getGroupsJoined } from "../../redux/community/CommunityAcitions";
+import { getGroupsCreated } from "../../redux/community/CommunityAcitions";
+
+
+
 
 export const SideBar = () => {
 
+  const user = useSelector((state) => state.auth.user)
+  // const groupsJoined = useSelector((state) => state.community.groupsJoined)
+  // const groupsCreated = useSelector((state) => state.community.groupsCreated)
+  const dispatch = useDispatch()
   const navigate = useNavigate();
   const logout = () => {
     localStorage.removeItem('token')
@@ -36,7 +49,7 @@ export const SideBar = () => {
               />
               <h1 className="font-bold text-gray-200 text-[15px] ml-3">
                 <div className="flex-col">
-                  <p> User Name</p>
+                  <p> {user?.username}</p>
                 </div>
               </h1>
             </div>
@@ -73,8 +86,8 @@ export const SideBar = () => {
             </div>
           </NavLink>
 
-         
-          
+
+
 
           <NavLink to={"/chat"}>
             <div className="p-2.5 mt-3 flex items-center rounded-md px-4 duration-300 cursor-pointer hover:bg-blue-600 text-white">
@@ -103,7 +116,7 @@ export const SideBar = () => {
               </span>
             </div>
           </NavLink>
-          
+
           <NavLink to={"/userstatistics"}>
             <div className="p-2.5 mt-3 flex items-center rounded-md px-4 duration-300 cursor-pointer hover:bg-blue-600 text-white">
               <i class="bi bi-bar-chart"></i>
@@ -112,7 +125,7 @@ export const SideBar = () => {
               </span>
             </div>
           </NavLink>
-          
+
 
           <div className="my-4 bg-gray-600 h-[1px]" />
 

@@ -65,7 +65,7 @@ const ChatHeader = () => {
   return (
     <div className="relative">
       <div className="mx-auto bg-white shadow-md rounded-md p-2 mt-5">
-         <h1 className="text-base font-semibold mb-4 text-center">Your Communities</h1>
+        <h1 className="text-base font-semibold mb-4 text-center">Your Communities</h1>
         {/* <div className="flex space-x-4">
           
 
@@ -162,7 +162,7 @@ const ChatHeader = () => {
         </div>
       )}
 
-      
+
     </div>
   );
 };

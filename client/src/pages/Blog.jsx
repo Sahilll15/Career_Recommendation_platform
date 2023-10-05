@@ -1,29 +1,13 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import ProfileLayout from '../components/Layout/ProfileLayout';
 import PostFormCard from '../components/PostFormCard';
-
-const blogPosts = [
-  {
-    id: 1,
-    title: 'Introduction to Tailwind CSS',
-    content: 'Tailwind CSS is a utility-first CSS framework...',
-    date: 'October 1, 2023',
-    imageUrl: 'https://example.com/image2.jpg',
-  },
-  {
-    id: 2,
-    title: 'Building a React Application',
-    content: 'In this tutorial, we will build a React application from scratch...',
-    date: 'October 5, 2023',
-    imageUrl: 'https://example.com/image2.jpg',
-  },
-  // Add more blog posts here
-];
+import { useSelector, useDispatch } from 'react-redux';
+import { fetchPosts } from '../redux/posts/postActions';
 
 const BlogPage = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedPost, setSelectedPost] = useState(null);
-
+  const posts = useSelector((state) => state.posts.posts.products)
   const openModal = (post) => {
     setSelectedPost(post);
     setIsModalOpen(true);
@@ -34,28 +18,46 @@ const BlogPage = () => {
     setIsModalOpen(false);
   };
 
+  const formatDateTime = (date) => {
+    const options = {
+      year: "numeric",
+      month: "short",
+      day: "numeric",
+      hour: "numeric",
+      minute: "numeric",
+    };
+
+    return new Date(date).toLocaleDateString(undefined, options);
+  };
+
+
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(fetchPosts())
+  }, [])
+
   return (
     <ProfileLayout>
-
-        <PostFormCard/>        
+      <PostFormCard />
       <div className=" min-h-screen py-8 w-f">
         <div className="container mx-auto">
           <h1 className="text-3xl font-semibold text-center mb-4">Latest Blogs</h1>
           <div className="grid grid-cols-1 m-5 gap-4">
-            {blogPosts.map((post) => (
+            {posts?.map((post) => (
               <div
                 key={post.id}
-                className="bg-white p-4 rounded-lg shadow-md cursor-pointer hover:shadow-xl transition duration-300 flex"
+                className="bg-white p-4 rounded-lg shadow-md cursor-pointer hover:shadow-xl transition duration-300 flex-col"
                 onClick={() => openModal(post)}
               >
+
                 <div>
-                <img src={post.imageUrl} alt={post.title} className="w-1/2 h-40 object-cover mb-2 rounded-t-lg" />
+                  <h2 className="text-lg font-semibold mb-2">{post.content}</h2>
+                  <p className="text-gray-600 text-sm">{formatDateTime(post?.createdAt)}</p>
                 </div>
-                <div>
-                <h2 className="text-lg font-semibold mb-2">{post.title}</h2>
-                <p className="text-gray-600 text-sm">{post.date}</p>
+                <img src={post?.media} alt="Post media" className="w-96 rounded-lg mb-4" />
               </div>
-              </div>
+
             ))}
           </div>
         </div>

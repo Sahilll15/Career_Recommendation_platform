@@ -1,32 +1,73 @@
 import React, { useEffect, useState } from 'react';
 import Card from './Card';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faImage } from '@fortawesome/free-solid-svg-icons';
+import { addPost, fetchPosts } from '../redux/posts/postActions';
+import { useSelector, useDispatch } from 'react-redux';
 
 
 
 export default function PostFormCard() {
-    const [isButtonDisabled, setIsButtonDisabled] = useState(false);
-    const [imageAddmodel, setImageAddmodel] = useState(false);
+  const [content, setContent] = useState('');
+  const [image, setImage] = useState(null); // Store the image in state
+  const [isButtonDisabled, setIsButtonDisabled] = useState(false);
+
+  const dispatch = useDispatch();
+  const [imageAddmodel, setImageAddmodel] = useState(false);
+  const user = useSelector((state) => state.auth.user);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsButtonDisabled(false);
+    }, 5000);
+
+    return () => clearTimeout(timer);
+  }, [isButtonDisabled]);
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    if (!content) {
+      return;
+    }
+
+    if (isButtonDisabled) {
+      return;
+    }
+
+    setIsButtonDisabled(true);
+
+    try {
+      await dispatch(addPost({ content, media: image }))
+      await dispatch(fetchPosts());
+      setContent('');
+      setImage(null);
+      setImageAddmodel(false);
+    } catch (error) {
+      console.error('Error adding post:', error);
+    }
+  };
+
+  const handleChange = (e) => {
+    setContent(e.target.value);
+  };
+
+  const handleMediaUpload = (e) => {
+    const selectedImage = e.target.files[0];
+    setImage(selectedImage);
+  };
 
 
-  
-
-  
-
-  // useEffect(() => {
-  //   if (!user) {
-  //     dispatch(getLoggedInUser());
-  //   }
-  // }, [dispatch, user])
 
   return (
     <Card noPadding={false}>
-      <form  className="w-full">
+      <form onSubmit={handleSubmit} className="w-full">
         <div className="my-4">
           <textarea
             id="content"
             name="content"
-            // value={content}
-            // onChange={handleChange}
+            value={content}
+            onChange={handleChange}
             className="w-full p-4 border h-14 rounded-lg text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
             placeholder="What's on your mind?"
             rows="4"
@@ -45,7 +86,7 @@ export default function PostFormCard() {
               id="media"
               name="media"
               accept="image/*, video/*" // Updated accept attribute
-            //   onChange={handleMediaUpload}
+              onChange={handleMediaUpload}
               className="w-full border rounded-lg py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
             />
           </div>
@@ -54,7 +95,7 @@ export default function PostFormCard() {
         {/* Toggle image upload */}
         <div className="mb-4 flex justify-between items-center ">
           <div className="flex items-center cursor-pointer border-2 border-slate-200 hover:bg-gray-100" onClick={() => setImageAddmodel(!imageAddmodel)}>
-            {/* <FontAwesomeIcon icon={faImage} className="text-gray-500 text-base" /> */}
+            <FontAwesomeIcon icon={faImage} className="text-gray-500 text-base" />
             <span className="text-gray-700 text-lg ml-2 ">Attach Photo/Video  &nbsp;</span>
           </div>
         </div>
@@ -84,7 +125,7 @@ export default function PostFormCard() {
               </svg>
             </div>
             <span class="ml-1 text-white transition-all duration-300 group-hover:text-transparent">
-              POST
+              Post
             </span>
           </button>
 

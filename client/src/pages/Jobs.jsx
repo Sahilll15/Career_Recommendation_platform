@@ -32,7 +32,7 @@ const Jobs = () => {
   };
 
   useEffect(() => {
-    // fetchJobs();
+    fetchJobs();
   }, []);
 
   useEffect(() => {

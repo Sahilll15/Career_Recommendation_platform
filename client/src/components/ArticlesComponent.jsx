@@ -1,4 +1,6 @@
 import React from 'react';
+import IMG from '../images/lap.png'
+
 
 const ArticleComponent = ({ articles }) => {
     return (
@@ -8,7 +10,7 @@ const ArticleComponent = ({ articles }) => {
                 <section className="p-4 min-h-screen" id="jobs">
                     <div className="flex items-center justify-center">
                         <h1 className="text-2xl font-bold">COURSES RECOMMENDED FOR YOU</h1>
-                        {/* <img src={IMG} alt="" className="mr-4 w-40" /> */}
+                        <img src={IMG} alt="" className="mr-4 w-40" />
                     </div>
                     <br />
                     <div className="container mx-auto">
@@ -25,9 +27,7 @@ const ArticleComponent = ({ articles }) => {
                                     </div>
                                 </div>
                             </div>
-
                         ))}
-
                     </div>
                 </section>
             </div>
