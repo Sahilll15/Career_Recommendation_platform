@@ -28,3 +28,36 @@ export const getCategory = createAsyncThunk(
     }
 
 )
+
+export const createCategory=createAsyncThunk(
+    'category/intrest',
+    async({interestCategory,userId},{rejectWithValue})=>{
+        try {
+            const payloadData = {
+                user: userId,
+                interestCategory: interestCategory
+            }
+            const response = await axios.patch(`${host}/api/v1/interest`,{
+                payloadData
+            } ,{
+                
+                
+                headers: {
+                    'Content-Type': 'application/json',
+                    Authorization: `Bearer ${localStorage.getItem('token')}`,
+                }
+            })
+            if (response.status === 200) {
+                console.log(response.data);
+                return response.data;
+            }
+            else {
+                console.log('error');
+                return rejectWithValue(response.data.message);
+            }
+
+        } catch (error) {
+            return rejectWithValue(error.response?.data?.message);
+        }
+    }
+)
