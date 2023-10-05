@@ -29,6 +29,8 @@ const BlogPage = () => {
 
     return new Date(date).toLocaleDateString(undefined, options);
   };
+  
+
 
 
   const dispatch = useDispatch();

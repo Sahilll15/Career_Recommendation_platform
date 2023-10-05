@@ -3,6 +3,7 @@ import authReducer from './redux/Auth/authSlice'
 import groupReducer from './redux/community/CommunitySlice'
 import quizReducer from './redux/Quiz/quizSlice'
 import productReducer from './redux/posts/postSlice'
+import categoryReducer from './redux/Category/CategorySlice'
 
 
 
@@ -16,6 +17,7 @@ const store = configureStore({
         group: groupReducer,
         quiz: quizReducer,
         posts: productReducer,
+        category: categoryReducer,
     },
     middleware: getDefaultMiddleware({
         serializableCheck: false
