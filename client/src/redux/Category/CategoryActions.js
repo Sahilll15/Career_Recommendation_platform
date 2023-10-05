@@ -37,7 +37,7 @@ export const createCategory=createAsyncThunk(
                 user: userId,
                 interestCategory: interestCategory
             }
-            const response = await axios.patch(`${host}/api/v1/interest`,{
+            const response = await axios.patch(`${host}/api/v1/interests`,{
                 payloadData
             } ,{
                 

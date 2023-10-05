@@ -1,5 +1,5 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
-import {getCategory} from './CategoryActions'
+import {getCategory, createCategory} from './CategoryActions'
 
 const initialState = {
     name: null,
@@ -33,6 +33,20 @@ export const categorySlice = createSlice({
             }
             )
             .addCase(getCategory.rejected, (state, action) => {
+                state.loading = false;
+                state.error = action.payload;
+            }
+            )
+            .addCase(createCategory.pending, (state) => {
+                state.loading = true;
+            }
+            )
+            .addCase(createCategory.fulfilled, (state, action) => {
+                state.loading = false;
+                state.category = action.payload;
+            }
+            )
+            .addCase(createCategory.rejected, (state, action) => {
                 state.loading = false;
                 state.error = action.payload;
             }
