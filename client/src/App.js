@@ -20,6 +20,8 @@ import Chat from './pages/Chat';
 import GroupDiscussion from './pages/GroupDescussion';
 import { getLoggedInUser } from './redux/Auth/authActions';
 import Land from './pages/Landing';
+import Statistics from './pages/Statistics';
+import Course from './pages/Cousre';
 
 
 
@@ -73,6 +75,11 @@ const App = () => {
             <Route path="/groupDiscussion/:id" element={<GroupDiscussion />} />
 
 
+            <Route path="/userstatistics" element={<Statistics />} />
+            <Route path='/courses' element={<Course/>} />
+
+
+
           </Route>
 
           <Route
@@ -94,7 +101,9 @@ const App = () => {
             <Route path='/quiz' element={<Quiz />} />
             <Route path="/sug" element={<Suggestion />} />
             <Route path="/resume" element={<Resume />} />
-            <Route path="Land" element={<Land />}/>
+            <Route path="Land" element={<Land />}/>            
+
+
 
 
 

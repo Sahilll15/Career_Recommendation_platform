@@ -1,4 +1,5 @@
 import React from 'react'
+import { NavLink } from 'react-router-dom'
 
 const PersonalDetails = () => {
   return (
@@ -46,6 +47,13 @@ const PersonalDetails = () => {
           {/* Add more skills as needed */}
         </div>
       </div>
+
+      <NavLink to='/statistics'>
+      <div className="max-w-md mx-auto bg-white rounded p-6 mt-6 flex items-center">
+        <h2 className="text-xl font-bold mb-4 mr-4">Get Statistical Data &nbsp;<i className="fa-solid fa-file-arrow-down text-blue-700 fa-xl"></i></h2>
+      </div>
+      </NavLink>
+
 
 
     </div>

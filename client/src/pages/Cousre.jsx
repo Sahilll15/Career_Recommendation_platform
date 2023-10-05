@@ -1,31 +1,36 @@
-import React from 'react';
-import ProfileLayout from '../components/Layout/ProfileLayout';
+import React from "react";
+import ProfileLayout from "../components/Layout/ProfileLayout";
+import IMG from "../images/lap.png";
 
 const coursesData = [
   {
     id: 1,
-    companyName: 'Company X',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+    companyName: "Company X",
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
   },
   {
     id: 2,
-    companyName: 'Company Y',
-    description: 'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+    companyName: "Company Y",
+    description:
+      "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
   },
   {
     id: 2,
-    companyName: 'Company Y',
-    description: 'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+    companyName: "Company Y",
+    description:
+      "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
   },
   {
     id: 2,
-    companyName: 'Company Y',
-    description: 'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+    companyName: "Company Y",
+    description:
+      "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
   },
   {
     id: 2,
-    companyName: 'Company Y',
-    description: 'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+    companyName: "Company Y",
+    description:
+      "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
   },
   // Add more data objects here
 ];
@@ -35,9 +40,17 @@ const Course = () => {
     <ProfileLayout>
       <div>
         <section className="p-4 min-h-screen" id="jobs">
+          <div className="flex items-center justify-center">
+            <h1 className="text-2xl font-bold">COURSES RECOMMENDED FOR YOU</h1>
+            <img src={IMG} alt="" className="mr-4 w-40" />
+          </div>
+          <br/>
           <div className="container mx-auto grid grid-cols-1 sm:grid-cols-3 gap-4">
             {coursesData.map((course) => (
-              <div key={course.id} className="bg-white rounded-lg shadow p-4 relative h-[225px]">
+              <div
+                key={course.id}
+                className="bg-white rounded-lg shadow p-4 relative h-[225px]"
+              >
                 <h2 className="text-xl font-bold mb-2">{course.companyName}</h2>
                 <p className="text-gray-600 mb-8">{course.description}</p>
                 <div className="bg-blue-600 w-fit mt-2 rounded-lg absolute bottom-2">

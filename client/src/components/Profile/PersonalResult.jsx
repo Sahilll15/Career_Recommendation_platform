@@ -1,4 +1,5 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 
 const PersonalResult = () => {
 
@@ -28,6 +29,12 @@ const PersonalResult = () => {
       <div className="max-w-md mx-auto bg-white rounded p-6 mt-6 flex items-center">
         <h2 className="text-xl font-bold mb-4 mr-4">Download Assessment Result &nbsp;<i className="fa-solid fa-file-arrow-down text-blue-700 fa-xl"></i></h2>
       </div>
+
+      <NavLink to='/resume'>
+      <div className="max-w-md mx-auto bg-white rounded p-6 mt-6 flex items-center">
+        <h2 className="text-xl font-bold mb-4 mr-4">Get Your Resume &nbsp;<i className="fa-solid fa-file-arrow-down text-blue-700 fa-xl"></i></h2>
+      </div>
+      </NavLink>
 
       {skills.map((skill, index) => (
         <div key={index} className="max-w-md bg-white shadow-lg rounded-lg overflow-hidden mx-auto my-4">

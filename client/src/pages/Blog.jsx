@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import ProfileLayout from '../components/Layout/ProfileLayout';
-import AddBlogForm from './AddBlogForm';
 import PostFormCard from '../components/PostFormCard';
 
 const blogPosts = [
