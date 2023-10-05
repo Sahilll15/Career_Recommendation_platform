@@ -37,12 +37,12 @@ export const getQuiz = createAsyncThunk(
 
 export const evaluateQuiz = createAsyncThunk(
     'quiz/evaluatequiz',
-    async (quizData, { rejectWithValue }) => {
+    async (quizId, userId, marksScored, { rejectWithValue }) => {
         try {
             const response = await axios.post(
                 `${host}/api/v1/quiz/evaluate`,
                 {
-                    quiz: quizData
+                    quizId,userId,marksScored
                 },
                 {
                     headers: {
