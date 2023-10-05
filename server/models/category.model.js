@@ -12,6 +12,9 @@ const categorySchema = mongoose.Schema({
         type: String
     },
     relatedSkills: [{name:{type: String}}],
+    imageUrl:{
+        type:String
+    },
     tags: [String]
 },{timestamps: true});
 
