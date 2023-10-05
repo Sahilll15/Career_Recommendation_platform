@@ -6,6 +6,8 @@ import {
   createDiscussionCommunity,
   getCommunityDiscussion,
 } from '../redux/community/CommunityAcitions';
+import IMG from '../images/Avatar/A1.png'
+
 import GroupDiscussionLayout from '../components/Layout/GroupDiscussionLayout';
 import { NavLink } from 'react-router-dom';
 import MainLayout from '../components/Layout/MainLayout'
@@ -149,7 +151,7 @@ const GroupDiscussion = () => {
                 <div key={index} className='mb-2 bg-gray-100 rounded-lg p-4'>
                   <div className='flex'>
                     <img
-                      src={conversation?.author?.avatar?.url}
+                      src={IMG}
                       alt='User Avatar'
                       className='w-8 h-8 rounded-full border border-black'
                     />

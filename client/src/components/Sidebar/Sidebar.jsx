@@ -4,6 +4,7 @@ import "../../css/Sidebar.css";
 import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
+import IMG from '../../images/Avatar/A1.png'
 import { getCommunityById } from "../../redux/community/CommunityAcitions";
 import { getCommunityDiscussion } from "../../redux/community/CommunityAcitions";
 import { getGroupsJoined } from "../../redux/community/CommunityAcitions";
@@ -38,10 +39,10 @@ export const SideBar = () => {
           <div className="text-gray-100 text-xl">
             <div className="p-2.5 mt-1 flex items-center">
               <img
-                // alt={user?.badges}
-                // src={user?.avatar?.url}
+                // 
+                src={IMG}
 
-                className="w-[40px] h-[40px] rounded-full border  "
+                className="w-[50px] h-[50px] border-2  rounded-full border-red-700   "
 
 
 
@@ -127,61 +128,11 @@ export const SideBar = () => {
           </NavLink>
 
 
-          <div className="my-4 bg-gray-600 h-[1px]" />
+         
 
-          <div
-            className="flex items-center p-2.5 mt-3 rounded-md px-4 duration-300 cursor-pointer hover:bg-blue-600 text-white"
-          // onClick={toggleDropdown}
-          >
-            <i className="bi bi-person-square"></i>
-            <div className="flex justify-between items-center w-full ml-4">
-              <span className="text-base text-white font-bold">
-                Joined Communities
-              </span>
-              <span
+          
 
-                className="text-base transform rotate-180"
-
-                id="arrow"
-              >
-                <i className="fas fa-chevron-down"></i>
-              </span>
-            </div>
-          </div>
-
-          <div
-
-          // className={`text-left mt-2 w-4/5 mx-auto  ${isDropdownOpen ? "block" : "hidden"
-          //   }`}
-
-          // id="submenu"
-          >
-            {/* {groupsJoined?.map((group) => (
-              <NavLink
-                to={'/group'}
-                onClick={() => {
-                  dispatch(getCommunityById(group._id));
-                  dispatch(getCommunityDiscussion(group._id));
-                }}
-                key={group._id}
-              >
-                <div className="rounded-lg shadow-md mb-2 bg-white p-3 hover:bg-gray-200 flex gap-2">
-                  <div>
-                    <img
-                      src={group.avatar}
-                      alt="Group Icon"
-                      className="w-10 h-10 rounded-full border"
-                    />
-                  </div>
-                  <div>
-                    <h2 className="text-sm text-gray-800">{group.name}</h2>
-                    <p className="text-gray-600 text-xs mt-1">By &nbsp;{group.groupAdmin}</p>
-                  </div>
-
-                </div>
-              </NavLink>
-            ))} */}
-          </div>
+          
 
           <div
             className="p-2.5 mt-3 flex items-center rounded-md px-4 duration-300 cursor-pointer hover:bg-blue-600 text-white"

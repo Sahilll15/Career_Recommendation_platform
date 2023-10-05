@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
+import { toast } from "sonner";
 
 
 
@@ -72,9 +73,9 @@ const ProfileForm = () => {
                     class="block mb-2 text-sm font-medium text-gray-900"
                   >
                     How much do you rely on logic and reason in
-                    decision-making?
+                    Self-Confidence?
                   </label>
-                  <select id="logic" class="form-select">
+                  <select id="logic" class="form-select" >
                     <option>0</option>
                     <option>1</option>
                     <option>2</option>
@@ -117,40 +118,14 @@ const ProfileForm = () => {
                     <option>5</option>
                   </select>
                 </div>
-                <div class="mb-6">
-                  <label
-                    for="leadership"
-                    class="block mb-2 text-sm font-medium text-gray-900"
-                  >
-                    Rate your inclination to take charge and provide direction
-                    in team projects:
-                  </label>
-                  <select id="leadership" class="form-select">
-                    <option>0</option>
-                    <option>1</option>
-                    <option>2</option>
-                    <option>3</option>
-                    <option>4</option>
-                    <option>5</option>
-                  </select>
-                </div>
-                <div class="mb-6">
-                  <label
-                    for="spontaneity"
-                    class="block mb-2 text-sm font-medium text-gray-900"
-                  >
-                    On a scale of 1 to 5, how comfortable are you with
-                    uncertainty and spontaneity in situations?
-                  </label>
-                  <select id="spontaneity" class="form-select">
-                    <option>0</option>
-                    <option>1</option>
-                    <option>2</option>
-                    <option>3</option>
-                    <option>4</option>
-                    <option>5</option>
-                  </select>
-                </div>
+                
+            
+                <button className="border border-black rounded-lg bg-blue-900 p-2 text-white" onClick={()=>{
+                  toast.success("Assessment Submitted Successfully")
+                  closeModal()
+                }}>
+                    Submit
+                </button>
               </form>
             </div>
           </div>

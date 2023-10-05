@@ -1,11 +1,9 @@
 import React from 'react';
 import IMG from '../images/lap.png'
 
-
 const ArticleComponent = ({ articles }) => {
     return (
         <div>
-
             <div>
                 <section className="p-4 min-h-screen" id="jobs">
                     <div className="flex items-center justify-center">
@@ -16,10 +14,12 @@ const ArticleComponent = ({ articles }) => {
                     <div className="container mx-auto">
                         {articles.map((course) => (
                             <div key={course.id} className="mb-4">
-                                <div className="bg-white rounded-lg shadow p-4 relative">
+                                <div className="bg-white rounded-lg shadow p-4 relative border-2 border-black">
                                     <h2 className="text-xl font-bold mb-2 text-indigo-700">{course.relatedCourses[0].name}</h2>
                                     <p className="text-gray-600 mb-2">{course.relatedCourses[0].description}</p>
-                                    <p className="text-gray-600 mb-2 text-blue-600">Average Salary: ${course.relatedJobs[0].avgSalary.toLocaleString()}</p>
+                                    {Array.isArray(course.tags) && course.tags.map((tag, index) => (
+                                        <p key={index}>#{tag}</p>
+                                    ))}
                                     <div className="bg-blue-600 w-fit mt-2 rounded-lg">
                                         <a href={course.relatedCourses[0].url} className="text-white p-2 block m-1">
                                             View Course
@@ -31,7 +31,6 @@ const ArticleComponent = ({ articles }) => {
                     </div>
                 </section>
             </div>
-
         </div>
     );
 };

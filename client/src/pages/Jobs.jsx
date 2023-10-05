@@ -3,6 +3,7 @@ import MainLayout from "../components/Layout/ProfileLayout";
 import axios from "axios";
 import Loader from "../components/Loader";
 import IMG from "../images/abc.png";
+import { NavLink } from 'react-router-dom'
 
 const Jobs = () => {
   const [jobs, setJobs] = useState([]);
@@ -74,10 +75,11 @@ const Jobs = () => {
 
               <p className="text-gray-700">{job.employer_company_type}</p>
               <p className="text-gray-700">{job.employer_name}</p>
-
-              <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+            <NavLink target="blank" to={job.job_apply_link}>
+              <button  className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
                 Apply Now
               </button>
+              </NavLink>
             </div>
           ))}
       </div>
