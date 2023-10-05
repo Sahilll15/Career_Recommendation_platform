@@ -18,16 +18,13 @@ const Suggestion = () => {
   
   const Category=useSelector((state)=>state.category.category)
 
-  // Define an array of image sources
-  const imageSources = [
-    require('../images/Components/1.png'),
-    require('../images/Components/2.png'),
-    require('../images/Components/3.png'),
-    require('../images/Components/4.png'),
-    require('../images/Components/5.png'),
-    require('../images/Components/6.png'),
-    
-  ];
+  const handleSubmit = (catgId,userId) => {
+    try{
+
+    }catch(e){
+      console.log(e)
+    }
+  }
 
   useEffect(()=>{
     dispatch(getCategory());
@@ -44,32 +41,17 @@ const Suggestion = () => {
             className="my-1 px-1 max:w-1/2 md:w-1/2 lg:my-4 lg:px-4 lg:w-1/4"
           >
             <article 
-              className={`overflow-hidden rounded-lg transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-75 duration-300 image-container shadow-lg shadow-black ${selectedImages.includes(category?.image) && 'selected'}`}
-              onClick={() => handleImageClick(category?.image)}
+              className={`overflow-hidden rounded-lg transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-75 duration-300 image-container shadow-lg shadow-black ${selectedImages.includes(category?.imageUrl) && 'selected'}`}
+              onClick={() => handleImageClick(category?._id)}
             >
-              <p>{category._id }</p>
+             
               <a>
-                <img alt={`Placeholder ${index+1}`} className="block h-auto w-full" src={category?.image} />
+                <img alt={`Placeholder ${index+1}`} className="block h-auto w-full" onClick={handleSubmit} src={category?.imageUrl} />
               </a>
             </article>
           </div>
         ))}
-        {/* {imageSources.map((src, index) => (
-          <div 
-            key={index} 
-            className="my-1 px-1 max:w-1/2 md:w-1/2 lg:my-4 lg:px-4 lg:w-1/4"
-          >
-            <article 
-              className={`overflow-hidden rounded-lg transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-75 duration-300 image-container shadow-lg shadow-black ${selectedImages.includes(src) && 'selected'}`}
-              onClick={() => handleImageClick(src)}
-            >
-              <a>
-                <img alt={`Placeholder ${index+1}`} className="block h-auto w-full" src={src} />
-              </a>
-            </article>
-          </div>
-          
-        ))} */}
+        
       </div>
     </div>
   );
