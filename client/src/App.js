@@ -8,7 +8,6 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Toaster, toast } from 'sonner'
 import { ToastContainer } from 'react-toastify';
 import Jobs from './pages/Jobs';
-import Home from './pages/Home'
 import Profile from './pages/Profile'
 import Resume from './pages/Resume'
 import Suggestion from './pages/Suggestion';
