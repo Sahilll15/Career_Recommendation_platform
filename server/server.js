@@ -9,7 +9,7 @@ const articleRoutes = require('./routes/articles.routes')
 const interestRoutes = require('./routes/userinterests.routes')
 const recmndRoutes = require('./routes/rcmnd.routes')
 const quizRoutes = require('./routes/quiz.routes')
-
+const productRoutes = require('./routes/Product.routes')
 
 const resumeRoutes = require('./routes/resume.routes')
 const groupRoutes = require('./routes/group.routes')
@@ -35,6 +35,8 @@ app.use('/api/v1/interests', interestRoutes);
 app.use('/api/v1/rcmnd', recmndRoutes);
 app.use('/api/v1/resume', resumeRoutes);
 app.use('/api/v1/quiz', quizRoutes);
+app.use('/api/v1/products', productRoutes);
+
 
 
 app.listen(PORT, () => {

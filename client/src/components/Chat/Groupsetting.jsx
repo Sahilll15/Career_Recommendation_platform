@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { updateCommunity, getCommunityById } from '../../redux/community/CommunityAcitions';
 import { useDispatch } from 'react-redux';
 
-const GroupSetting = ({ group,setModalOpen }) => {
+const GroupSetting = ({ group, setModalOpen }) => {
   const dispatch = useDispatch();
   const [formData, setFormData] = useState({
     groupName: group?.groupname,
@@ -32,10 +32,10 @@ const GroupSetting = ({ group,setModalOpen }) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    
+
 
     const groupId = group._id
-    
+
     await dispatch(updateCommunity({ groupId, formData }));
     await dispatch(getCommunityById(groupId));
     setModalOpen(false);
