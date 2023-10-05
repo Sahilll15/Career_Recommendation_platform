@@ -69,17 +69,17 @@ const evaluateQuiz = async (req,res) => {
         if(!existingQuiz){
             res.status(404).json({message: "Quiz does not exists"})
         }
-        const existingUser = await UserInterests.find({user: userId});
+        const existingUser = await UserInterests.findOne({user: userId});
         if(!existingUser){
             res.status(404).json({message: "User does not exists"})
-        }else{
+        }
             existingUser.quizScore.push({
                 quiz: quizId,
                 scored: marksScored,
             });
             await existingUser.save();
             res.status(200).json({message: "Quiz successfully assessed"})
-        }
+        
 
     }catch(error){
         console.error(error);
