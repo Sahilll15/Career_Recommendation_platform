@@ -33,8 +33,7 @@ const App = () => {
 
   useEffect(() => {
     dispatch(getLoggedInUser())
-  }
-  )
+  }, [dispatch])
 
   return (
     <>
