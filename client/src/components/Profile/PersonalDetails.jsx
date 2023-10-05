@@ -15,7 +15,7 @@ const PersonalDetails = () => {
           />
         </div>
         <div className="text-center">
-          <h2 className="text-xl font-semibold mb-2">Aditya Shah</h2>
+          <h2 className="text-xl font-semibold mb-2">Rehman</h2>
           <p className="text-gray-600 text-sm mb-2">adi@example.com</p>
           <p className="text-gray-600 text-sm mb-2">123-456-7890</p>
         </div>

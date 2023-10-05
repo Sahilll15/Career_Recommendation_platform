@@ -42,6 +42,8 @@ const App = () => {
       <Toaster richColors />
       <Router>
         <Routes>
+        <Route path="/land" element={<Land />} />
+
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
 
@@ -102,7 +104,6 @@ const App = () => {
             <Route path='/quiz' element={<Quiz />} />
             <Route path="/sug" element={<Suggestion />} />
             <Route path="/resume" element={<Resume />} />
-            <Route path="Land" element={<Land />} />
 
 
 
