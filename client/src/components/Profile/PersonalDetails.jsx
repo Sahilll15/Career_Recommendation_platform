@@ -25,12 +25,11 @@ const PersonalDetails = () => {
       <div className="max-w-md rounded-lg bg-white shadow-lg p-6 w-full">
         <h2 className="text-xl font-semibold mb-4">Skills</h2>
         <div className="flex flex-wrap gap-2">
-          <div className="bg-green-300 px-4 py-2 rounded-full text-white text-sm">Skill 1</div>
-          <div className="bg-green-300 px-4 py-2 rounded-full text-white text-sm">Skill 2</div>
-          <div className="bg-green-300 px-4 py-2 rounded-full text-white text-sm">Skill 3</div>
-          <div className="bg-green-300 px-4 py-2 rounded-full text-white text-sm">Skill 1</div>
-          <div className="bg-green-300 px-4 py-2 rounded-full text-white text-sm">Skill 2</div>
-          <div className="bg-green-300 px-4 py-2 rounded-full text-white text-sm">Skill 3</div>
+          <div className="bg-green-300 px-4 py-2 rounded-full text-white text-sm">HTML</div>
+          <div className="bg-green-300 px-4 py-2 rounded-full text-white text-sm">CSS</div>
+          <div className="bg-green-300 px-4 py-2 rounded-full text-white text-sm">JS</div>
+          <div className="bg-green-300 px-4 py-2 rounded-full text-white text-sm">REACT</div>
+  
           {/* Add more skills as needed */}
         </div>
       </div>
@@ -38,12 +37,10 @@ const PersonalDetails = () => {
       <div className="max-w-md bg-white mt-5 rounded-lg shadow-lg p-6 w-full">
         <h2 className="text-xl font-semibold mb-4">Interest</h2>
         <div className="flex flex-wrap gap-2">
-          <div className="bg-blue-300 px-4 py-2 rounded-full text-white text-sm">Skill 1</div>
-          <div className="bg-blue-300 px-4 py-2 rounded-full text-white text-sm">Skill 2</div>
-          <div className="bg-blue-300 px-4 py-2 rounded-full text-white text-sm">Skill 3</div>
-          <div className="bg-blue-300 px-4 py-2 rounded-full text-white text-sm">Skill 1</div>
-          <div className="bg-blue-300 px-4 py-2 rounded-full text-white text-sm">Skill 2</div>
-          <div className="bg-blue-300 px-4 py-2 rounded-full text-white text-sm">Skill 3</div>
+          <div className="bg-blue-300 px-4 py-2 rounded-full text-white text-sm">M.E.R.N STACK</div>
+          <div className="bg-blue-300 px-4 py-2 rounded-full text-white text-sm">WEB DEVELOPMENT</div>
+          <div className="bg-blue-300 px-4 py-2 rounded-full text-white text-sm">FRONTEND</div>
+     
           {/* Add more skills as needed */}
         </div>
       </div>

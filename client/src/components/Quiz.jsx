@@ -3,6 +3,10 @@ import MainLayout from "./Layout/MainLayout";
 import { getQuiz } from '../redux/Quiz/quizActions';
 import { useDispatch, useSelector } from 'react-redux';
 import { getLoggedInUser } from '../redux/Auth/authActions';
+import { toast } from 'sonner';
+import { NavLink, Navigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom';
+
 
 const Quiz = () => {
   const dispatch = useDispatch();
@@ -39,6 +43,7 @@ const Quiz = () => {
 
   // Check if questions array is empty
   const hasNextQuestion = currentQuestion < questions?.length - 1 && questions?.length > 0;
+const navigate = useNavigate();
 
   useEffect(() => {
 
@@ -48,6 +53,12 @@ const Quiz = () => {
       dispatch(getQuiz(user?.intrestedCategory[0]));
     }
   }, [dispatch, user]);
+
+  const handleSubmit = () => {  
+    
+    navigate('/profile');
+    toast.success('Quiz Submitted Successfully');
+  }
 
   if (!user) {
     return (
@@ -109,7 +120,7 @@ const Quiz = () => {
           </button>
         )}
         {!hasNextQuestion && (
-          <button className="bg-green-500 text-white py-2 px-4 rounded">Finish</button>
+          <button className="bg-green-500 text-white py-2 px-4 rounded" onClick={handleSubmit}>Finish</button>
         )}
       </div>
     </div>
