@@ -11,6 +11,8 @@ const Suggestion = () => {
     );
   };
 
+  
+
   // Define an array of image sources
   const imageSources = [
     require('../images/Components/1.png'),
@@ -18,11 +20,13 @@ const Suggestion = () => {
     require('../images/Components/3.png'),
     require('../images/Components/4.png'),
     require('../images/Components/5.png'),
-    require('../images/Components/6.png')
+    require('../images/Components/6.png'),
+    
   ];
 
   return (
     <div className="container my-12 mx-auto px-4 md:px-12">
+      <button>Submit</button>
       <div className="flex flex-wrap -mx-1 lg:-mx-4">
         {imageSources.map((src, index) => (
           <div 
@@ -33,7 +37,7 @@ const Suggestion = () => {
               className={`overflow-hidden rounded-lg transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-75 duration-300 image-container shadow-lg shadow-black ${selectedImages.includes(src) && 'selected'}`}
               onClick={() => handleImageClick(src)}
             >
-              <a href="#">
+              <a>
                 <img alt={`Placeholder ${index+1}`} className="block h-auto w-full" src={src} />
               </a>
             </article>
