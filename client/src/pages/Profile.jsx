@@ -4,7 +4,6 @@ import PrsonalDetail from "../components/Profile/PersonalDetails";
 import PersonalDetails from "../components/Profile/PersonalDetails";
 import ProfileLayout from "../components/Layout/ProfileLayout";
 import PersonalResult from "../components/Profile/PersonalResult";
-import { NavLink } from "react-router-dom";
 
 const Profile = () => {
   return (
