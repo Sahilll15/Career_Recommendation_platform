@@ -49,8 +49,8 @@ const PersonalDetails = () => {
       </div>
 
       <NavLink to='/statistics'>
-      <div className="max-w-md mx-auto bg-white rounded p-6 mt-6 flex items-center">
-        <h2 className="text-xl font-bold mb-4 mr-4">Get Statistical Data &nbsp;<i className="fa-solid fa-file-arrow-down text-blue-700 fa-xl"></i></h2>
+      <div className="max-w-md mx-auto bg-white rounded p-6 mt-6 flex w-full items-center">
+        <h2 className="text-xl text-blue-500 font-bold mb-4 mr-4">Get Statistical Data &nbsp;<i class="fa-solid fa-arrow-up-right-from-square"></i></h2>
       </div>
       </NavLink>
 

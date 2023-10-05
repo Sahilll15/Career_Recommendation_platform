@@ -1,5 +1,5 @@
 import React from "react";
-import ProfileLayout from "../components/Layout/ProfileLayout";
+import ProfileLayout from "./Layout/ProfileLayout";
 import IMG from "../images/lap.png";
 
 const coursesData = [
@@ -39,30 +39,32 @@ const Course = () => {
   return (
     <ProfileLayout>
       <div>
-        <section className="p-4 min-h-screen" id="jobs">
-          <div className="flex items-center justify-center">
-            <h1 className="text-2xl font-bold">COURSES RECOMMENDED FOR YOU</h1>
-            <img src={IMG} alt="" className="mr-4 w-40" />
+  <section className="p-4 min-h-screen" id="jobs">
+    <div className="flex items-center justify-center">
+      <h1 className="text-2xl font-bold">COURSES RECOMMENDED FOR YOU</h1>
+      <img src={IMG} alt="" className="mr-4 w-40" />
+    </div>
+    <br />
+    <div className="container mx-auto">
+      {coursesData.map((course) => (
+        <div key={course.id} className="mb-4">
+          <div className="bg-white rounded-lg shadow p-4 relative">
+            <h2 className="text-xl font-bold mb-2">{course.articleName}</h2>
+            <p className="text-gray-600 mb-2">{course.description}</p>
+            <p className="text-gray-600 mb-2">Company Name: {course.companyName}</p>
+            <p className="text-gray-600 mb-2">Average Salary: {course.avgSalary}</p>
+            <div className="bg-blue-600 w-fit mt-2 rounded-lg">
+              <a href={course.url} className="text-white p-2 block m-1">
+                View Course
+              </a>
+            </div>
           </div>
-          <br/>
-          <div className="container mx-auto grid grid-cols-1 sm:grid-cols-3 gap-4">
-            {coursesData.map((course) => (
-              <div
-                key={course.id}
-                className="bg-white rounded-lg shadow p-4 relative h-[225px]"
-              >
-                <h2 className="text-xl font-bold mb-2">{course.companyName}</h2>
-                <p className="text-gray-600 mb-8">{course.description}</p>
-                <div className="bg-blue-600 w-fit mt-2 rounded-lg absolute bottom-2">
-                  <a href="#" className="text-white p-2 block m-1">
-                    View Course
-                  </a>
-                </div>
-              </div>
-            ))}
-          </div>
-        </section>
-      </div>
+        </div>
+      ))}
+    </div>
+  </section>
+</div>
+
     </ProfileLayout>
   );
 };

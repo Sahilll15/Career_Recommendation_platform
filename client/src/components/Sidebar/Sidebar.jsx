@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-
 import { NavLink } from "react-router-dom";
 import "../../css/Sidebar.css";
 import { useNavigate } from "react-router-dom";
@@ -74,14 +73,8 @@ export const SideBar = () => {
             </div>
           </NavLink>
 
-          <NavLink to={"/courses"}>
-            <div className="p-2.5 mt-3 flex items-center rounded-md px-4 duration-300 cursor-pointer hover:bg-blue-600 text-white">
-              <i className="bi bi-house-door-fill" />
-              <span className="text-[15px] ml-4 text-gray-200 font-bold">
-                Courses
-              </span>
-            </div>
-          </NavLink>
+         
+          
 
           <NavLink to={"/chat"}>
             <div className="p-2.5 mt-3 flex items-center rounded-md px-4 duration-300 cursor-pointer hover:bg-blue-600 text-white">

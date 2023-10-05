@@ -21,7 +21,7 @@ import GroupDiscussion from './pages/GroupDescussion';
 import { getLoggedInUser } from './redux/Auth/authActions';
 import Land from './pages/Landing';
 import Statistics from './pages/Statistics';
-import Course from './pages/Cousre';
+import Course from './components/Cousre';
 
 
 
