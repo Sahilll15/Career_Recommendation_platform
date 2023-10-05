@@ -20,7 +20,7 @@ import Home from './pages/Home';
 import Chat from './pages/Chat';
 import GroupDiscussion from './pages/GroupDescussion';
 import { getLoggedInUser } from './redux/Auth/authActions';
-
+import JobStats from './pages/JobStats';
 
 
 
@@ -69,6 +69,7 @@ const App = () => {
 
             <Route path="/jobs" element={<Jobs />} />
             <Route path="/groupDiscussion/:id" element={<GroupDiscussion />} />
+            <Route path="/jobStats" element={<JobStats />} />
 
 
           </Route>

@@ -67,7 +67,7 @@ const Quiz = () => {
   const hasNextQuestion = currentQuestion < questions.length - 1;
 
   useEffect(() => {
-    dispatch(getQuiz(user?.intrestedCategory[0]._id))
+    dispatch(getQuiz(user?.intrestedCategory))
   }, [dispatch])
 
   return (
