@@ -14,13 +14,16 @@ import Suggestion from './pages/Suggestion';
 import Forgot from './pages/Auth/Forgot';
 
 import Quiz from './components/Quiz';
-
-
-import Home from './pages/Home';
+import Home from './pages/Home'
+import BlogPage from './pages/Blog';
 import Chat from './pages/Chat';
 import GroupDiscussion from './pages/GroupDescussion';
 import { getLoggedInUser } from './redux/Auth/authActions';
 import JobStats from './pages/JobStats';
+import Land from './pages/Landing';
+import Statistics from './pages/Statistics';
+import Course from './components/Cousre';
+
 
 
 
@@ -31,8 +34,7 @@ const App = () => {
 
   useEffect(() => {
     dispatch(getLoggedInUser())
-  }
-  )
+  }, [dispatch])
 
   return (
     <>
@@ -68,8 +70,15 @@ const App = () => {
             <Route path="/chat" element={<Chat />} />
 
             <Route path="/jobs" element={<Jobs />} />
+            <Route path="/blog" element={<BlogPage />} />
+
             <Route path="/groupDiscussion/:id" element={<GroupDiscussion />} />
             <Route path="/jobStats" element={<JobStats />} />
+
+
+            <Route path="/userstatistics" element={<Statistics />} />
+            <Route path='/courses' element={<Course />} />
+
 
 
           </Route>
@@ -93,6 +102,9 @@ const App = () => {
             <Route path='/quiz' element={<Quiz />} />
             <Route path="/sug" element={<Suggestion />} />
             <Route path="/resume" element={<Resume />} />
+            <Route path="Land" element={<Land />} />
+
+
 
 
 

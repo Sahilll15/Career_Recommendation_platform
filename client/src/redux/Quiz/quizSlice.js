@@ -1,11 +1,12 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-import { getQuiz } from './quizActions'
+import { getQuiz, getRecommendedArticles } from './quizActions'
 
 const initialState = {
     quiz: null,
     loading: false,
-    error: null
+    error: null,
+    articles: []
 }
 
 
@@ -27,7 +28,24 @@ export const quizSlice = createSlice({
             state.loading = false;
             state.error = action.payload;
         })
+
+
+        builders.addCase(getRecommendedArticles.pending, (state, action) => {
+            state.loading = true;
+        })
+
+        builders.addCase(getRecommendedArticles.fulfilled, (state, action) => {
+            state.loading = false;
+            state.articles = action.payload;
+        })
+
+        builders.addCase(getRecommendedArticles.rejected, (state, action) => {
+            state.loading = false;
+            state.error = action.payload;
+        })
     }
 })
 
 export default quizSlice.reducer;
+
+

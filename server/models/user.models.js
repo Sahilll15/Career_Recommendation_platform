@@ -25,8 +25,8 @@ const userSchema = mongoose.Schema({
         type: String,
     },
     intrestedCategory: [
-        {type: mongoose.Types.ObjectId,ref: "Category"}
-        
+        { type: mongoose.Types.ObjectId, ref: "Category" }
+
     ],
 
 

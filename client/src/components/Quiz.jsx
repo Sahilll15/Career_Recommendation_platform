@@ -1,50 +1,25 @@
 import React, { useEffect, useState } from 'react';
-
-
 import MainLayout from "./Layout/MainLayout";
 import { getQuiz } from '../redux/Quiz/quizActions';
 import { useDispatch, useSelector } from 'react-redux';
+import { getLoggedInUser } from '../redux/Auth/authActions';
 
 const Quiz = () => {
   const dispatch = useDispatch();
-  const questions = [
-    {
-      question: "What is the capital of France?",
-      options: ["London", "Madrid", "Paris", "Berlin"],
-      correctAnswer: "Paris",
-    },
-    {
-      question: "What is the capital of France?",
-      options: ["London", "Madrid", "Paris", "Berlin"],
-      correctAnswer: "Paris",
-    },
-    {
-      question: "What is the capital of France?",
-      options: ["London", "Madrid", "Paris", "Berlin"],
-      correctAnswer: "Paris",
-    },
-    {
-      question: "What is the capital of France?",
-      options: ["London", "Madrid", "Paris", "Berlin"],
-      correctAnswer: "Paris",
-    },
-
-  ];
-
-
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [progress, setProgress] = useState(0);
-
   const [selectedAnswer, setSelectedAnswer] = useState(null);
-  const user = useSelector((state) => state?.auth?.user)
-  const questions2 = useSelector((state) => state?.quiz?.quiz?.questions)
+  const user = useSelector((state) => state.auth.user);
 
+  // Access the questions from the Redux store
+  const quizData = useSelector((state) => (state.quiz && state.quiz.quiz && state.quiz.quiz[0]) || {});
+
+  const questions = quizData.questions || [];
 
   const handleOptionSelect = (option) => {
     setSelectedAnswer(option);
   };
 
-  // Function to handle next question
   const handleNextQuestion = () => {
     if (selectedAnswer !== null) {
       setSelectedAnswer(null);
@@ -55,7 +30,6 @@ const Quiz = () => {
     }
   };
 
-  // Function to handle going back to previous question
   const handlePreviousQuestion = () => {
     if (currentQuestion > 0) {
       setCurrentQuestion(currentQuestion - 1);
@@ -63,44 +37,60 @@ const Quiz = () => {
     }
   };
 
-  // Determine if there is a next question
-  const hasNextQuestion = currentQuestion < questions.length - 1;
+  // Check if questions array is empty
+  const hasNextQuestion = currentQuestion < questions?.length - 1 && questions?.length > 0;
 
   useEffect(() => {
-    dispatch(getQuiz(user?.intrestedCategory))
-  }, [dispatch])
+
+    if (user) {
+      console.log(user?.intrestedCategory[0]);
+      console.log('hello');
+      dispatch(getQuiz(user?.intrestedCategory[0]));
+    }
+  }, [dispatch, user]);
+
+  if (!user) {
+    return (
+      <div className="flex flex-col justify-center items-center h-screen">
+        <div className="animate-spin rounded-full border-t-4 border-blue-500 border-opacity-25 h-20 w-20"></div>
+        <div>Loading Quiz....</div>
+      </div>
+    );
+  }
+
+  if (questions.length === 0) {
+    return (
+      <div className="flex flex-col justify-center items-center h-screen">
+        <div className="animate-spin rounded-full border-t-4 border-blue-500 border-opacity-25 h-20 w-20"></div>
+        <div>No Quiz Found....</div>
+      </div>
+    );
+  }
 
   return (
     <div className="max-w-xl mx-auto p-4 mt-9">
-      {/* Progress Bar */}
       <div className="relative mb-4 h-4 bg-gray-300 rounded-full">
         <div
           className="absolute top-0 left-0 h-full bg-blue-600 rounded-full"
           style={{ width: `${progress}%` }}
         />
       </div>
-
-      {/* Question */}
       <div className="mb-6">
-        <h2 className="text-2xl font-bold">{questions[currentQuestion].question}</h2>
+        <h2 className="text-2xl font-bold">
+          {questions[currentQuestion]?.questionText}
+        </h2>
       </div>
-
-      {/* Options */}
       <div className="grid grid-cols-1 gap-4">
-        {questions[currentQuestion].options.map((option, index) => (
+        {questions[currentQuestion]?.options.map((option, index) => (
           <div
             key={index}
-            className={`bg-white p-4 border rounded cursor-pointer ${selectedAnswer === option ? ' bg-red-600 text-white' : ''
-
-              }`}
+            className={`bg-white p-4 border rounded cursor-pointer ${selectedAnswer === option ? 'bg-red-600 text-white' : ''}`}
             onClick={() => handleOptionSelect(option)}
           >
             {option}
           </div>
         ))}
       </div>
-
-      {/* Navigation Buttons */}
       <div className="flex justify-between mt-4">
         {currentQuestion > 0 && (
           <button
@@ -110,7 +100,6 @@ const Quiz = () => {
             Back
           </button>
         )}
-
         {hasNextQuestion && (
           <button
             className="bg-blue-500 text-white py-2 px-4 rounded"
@@ -119,7 +108,6 @@ const Quiz = () => {
             Next
           </button>
         )}
-
         {!hasNextQuestion && (
           <button className="bg-green-500 text-white py-2 px-4 rounded">Finish</button>
         )}
@@ -127,4 +115,5 @@ const Quiz = () => {
     </div>
   );
 };
+
 export default Quiz;

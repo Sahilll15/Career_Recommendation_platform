@@ -28,6 +28,24 @@ const Resume = () => {
     console.log(resumeState)
   }
 
+  const [formData, setFormData] = useState({
+    companyName: '',
+    role: '',
+    year: ''
+  });
+
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({
+      ...formData,
+      [name]: value
+    });
+  };
+
+  const isFormValid = () => {
+    return formData.companyName && formData.role && formData.year;
+  };
+
   return (
     <div className="bg-gray-900 min-h-screen">
 
@@ -114,9 +132,10 @@ const Resume = () => {
                       <div className="">
                         <input
                           type="text"
-                          name="last-name"
+                          name="linkedinurl"
                           id="last-name"
                           autoComplete="family-name"
+                          onChange={handleChange}
                           className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                         />
                       </div>
@@ -140,6 +159,7 @@ const Resume = () => {
                       rows={3}
                       className="block w-full rounded-md border-0 py-1.5 text-balck shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                       defaultValue={""}
+                      onChange={handleChange}
                     />
                   </div>
                 </div>
@@ -225,63 +245,58 @@ const Resume = () => {
 
 
               <div className="border-b border-gray-900/10 mt-6">
-                <h2 className="text-base font-semibold leading-7 text-white">
-                  Work Experience
-                </h2>
-                <div className="grid grid-cols-1 gap-x-6 gap-y-4 sm:grid-cols-6">
-                  <div className="sm:col-span-2">
-                    <label
-                      htmlFor="companyName"
-                      className="block text-sm font-medium text-white"
-                    >
-                      Company Name
-                    </label>
-                    <div className="">
-                      <input
-                        type="text"
-                        name="companyName"
-                        id="companyName"
-                        autoComplete="organization"
-                        className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                      />
-                    </div>
-                  </div>
-                  <div className="sm:col-span-2">
-                    <label
-                      htmlFor="role"
-                      className="block text-sm font-medium text-white"
-                    >
-                      Role
-                    </label>
-                    <div className="">
-                      <input
-                        type="text"
-                        name="role"
-                        id="role"
-                        autoComplete="role"
-                        className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                      />
-                    </div>
-                  </div>
-                  <div className="sm:col-span-2">
-                    <label
-                      htmlFor="year"
-                      className="block text-sm font-medium text-white"
-                    >
-                      Year
-                    </label>
-                    <div className="">
-                      <input
-                        type="text"
-                        name="year"
-                        id="year"
-                        autoComplete="year"
-                        className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                      />
-                    </div>
-                  </div>
-                </div>
-              </div>
+      <h2 className="text-base font-semibold leading-7 text-white">Work Experience</h2>
+      <div className="grid grid-cols-1 gap-x-6 gap-y-4 sm:grid-cols-6">
+        <div className="sm:col-span-2">
+          <label htmlFor="companyName" className="block text-sm font-medium text-white">Company Name</label>
+          <div className="">
+            <input
+              type="text"
+              name="companyName"
+              id="companyName"
+              autoComplete="organization"
+              className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+              value={formData.companyName}
+              onChange={handleInputChange}
+            />
+          </div>
+        </div>
+        <div className="sm:col-span-2">
+          <label htmlFor="role" className="block text-sm font-medium text-white">Role</label>
+          <div className="">
+            <input
+              type="text"
+              name="role"
+              id="role"
+              autoComplete="role"
+              className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+              value={formData.role}
+              onChange={handleInputChange}
+            />
+          </div>
+        </div>
+        <div className="sm:col-span-2">
+          <label htmlFor="year" className="block text-sm font-medium text-white">Year</label>
+          <div className="">
+            <input
+              type="text"
+              name="year"
+              id="year"
+              autoComplete="year"
+              className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+              value={formData.year}
+              onChange={handleInputChange}
+            />
+          </div>
+        </div>
+      </div>
+      <button
+        className="mt-4 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+        disabled={!isFormValid()}
+      >
+        Add
+      </button>
+    </div>
 
               <div className="border-b border-gray-900/10 mt-6">
                 <h2 className="text-base font-semibold leading-7 text-white">

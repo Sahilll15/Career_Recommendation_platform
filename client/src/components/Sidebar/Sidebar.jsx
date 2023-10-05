@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-
 import { NavLink } from "react-router-dom";
 import "../../css/Sidebar.css";
 import { useNavigate } from "react-router-dom";
@@ -74,20 +73,23 @@ export const SideBar = () => {
             </div>
           </NavLink>
 
-          <NavLink to={"/courses"}>
-            <div className="p-2.5 mt-3 flex items-center rounded-md px-4 duration-300 cursor-pointer hover:bg-blue-600 text-white">
-              <i className="bi bi-house-door-fill" />
-              <span className="text-[15px] ml-4 text-gray-200 font-bold">
-                Courses
-              </span>
-            </div>
-          </NavLink>
+         
+          
 
           <NavLink to={"/chat"}>
             <div className="p-2.5 mt-3 flex items-center rounded-md px-4 duration-300 cursor-pointer hover:bg-blue-600 text-white">
               <i class="bi bi-people"></i>
               <span className="text-[15px] ml-4 text-gray-200 font-bold">
                 Communities
+              </span>
+            </div>
+          </NavLink>
+
+          <NavLink to={"/blog"}>
+            <div className="p-2.5 mt-3 flex items-center rounded-md px-4 duration-300 cursor-pointer hover:bg-blue-600 text-white">
+              <i class="bi bi-people"></i>
+              <span className="text-[15px] ml-4 text-gray-200 font-bold">
+                Blog
               </span>
             </div>
           </NavLink>
@@ -246,7 +248,7 @@ export const SideBar = () => {
                 </div>
               </NavLink>
 
-              <NavLink to={'/chat'}>
+              <NavLink to={'/jobs'}>
                 <a1
                   href="#"
                   className="w-full focus:text-teal-500 hover:text-teal-500 justify-center inline-block text-center pt-2 pb-1"
@@ -299,7 +301,7 @@ export const SideBar = () => {
                       </g>
                     </g>
                   </svg>
-                  <span className="tab tab-kategori block text-xs">My Group</span>
+                  <span className="tab tab-kategori block text-xs"> Job</span>
                 </a1>
               </NavLink>
 
@@ -339,13 +341,13 @@ export const SideBar = () => {
                       />
                     </g>
                   </svg>
-                  <span className="tab tab-explore block text-xs">Statistics</span>
+                  <span className="tab tab-explore block text-xs">Blog</span>
                 </a>
               </NavLink>
 
 
 
-              <NavLink to={'/boost'}>
+              <NavLink to={'/courses'}>
                 <a
                   href="#"
                   className="w-full focus:text-teal-500 hover:text-teal-500 justify-center inline-block text-center pt-2 pb-1"
@@ -353,7 +355,7 @@ export const SideBar = () => {
                   <i class="fa-solid fa-rocket fa-xl"></i>
 
                   <span className="tab tab-whishlist block text-xs mt-1">
-                    Boost
+                    Courses
                   </span>
                 </a>
               </NavLink>

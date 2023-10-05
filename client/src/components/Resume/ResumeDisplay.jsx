@@ -13,9 +13,9 @@ const ResumeDisplay = ({ resumeState }) => {
         </div>
 
         <div>
-          <p className="font-medium mt-6 ">{resumeState.about}</p>
+          <p className="font-medium mt-6 ">ABOUT ME</p>
           <hr />
-          <p>Some thing that no gives fuck</p>
+          <p>{resumeState.about}</p>
         </div>
 
         <div>
