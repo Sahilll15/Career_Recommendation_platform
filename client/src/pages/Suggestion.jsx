@@ -18,14 +18,6 @@ const Suggestion = () => {
   
   const Category=useSelector((state)=>state.category.category)
 
-  const handleSubmit = (catgId,userId) => {
-    try{
-
-    }catch(e){
-      console.log(e)
-    }
-  }
-
   useEffect(()=>{
     dispatch(getCategory());
     console.log('first'+Category)
@@ -46,7 +38,7 @@ const Suggestion = () => {
             >
              
               <a>
-                <img alt={`Placeholder ${index+1}`} className="block h-auto w-full" onClick={handleSubmit} src={category?.imageUrl} />
+                <img alt={`Placeholder ${index+1}`} className="block h-auto w-full"  src={category?.imageUrl} />
               </a>
             </article>
           </div>

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import MainLayout from "./Layout/MainLayout";
-import { getQuiz } from '../redux/Quiz/quizActions';
+import { getQuiz,evaluateQuiz } from '../redux/Quiz/quizActions';
 import { useDispatch, useSelector } from 'react-redux';
 import { getLoggedInUser } from '../redux/Auth/authActions';
 
@@ -9,6 +9,7 @@ const Quiz = () => {
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [progress, setProgress] = useState(0);
   const [selectedAnswer, setSelectedAnswer] = useState(null);
+  const [score, setScore] = useState(0); // Step 1: Initialize score
   const user = useSelector((state) => state.auth.user);
 
   // Access the questions from the Redux store
@@ -20,8 +21,14 @@ const Quiz = () => {
     setSelectedAnswer(option);
   };
 
+
+
   const handleNextQuestion = () => {
     if (selectedAnswer !== null) {
+      // Step 2: Check if the selected answer is correct and update the score
+      if (selectedAnswer === questions[currentQuestion].correctAns) {
+        setScore(score + 1);
+      }
       setSelectedAnswer(null);
       setCurrentQuestion(currentQuestion + 1);
       setProgress(((currentQuestion + 1) / questions.length) * 100);
@@ -49,6 +56,9 @@ const Quiz = () => {
     }
   }, [dispatch, user]);
 
+  const handleSubmit = () => {
+    dispatch(getQuiz(questions[0]._id,user?.id,score));
+  }
   if (!user) {
     return (
       <div className="flex flex-col justify-center items-center h-screen">
@@ -66,6 +76,8 @@ const Quiz = () => {
       </div>
     );
   }
+
+ 
 
   return (
     <div className="max-w-xl mx-auto p-4 mt-9">
@@ -109,7 +121,7 @@ const Quiz = () => {
           </button>
         )}
         {!hasNextQuestion && (
-          <button className="bg-green-500 text-white py-2 px-4 rounded">Finish</button>
+          <button className="bg-green-500 text-white py-2 px-4 rounded" onClick={handleSubmit}>Finish</button>
         )}
       </div>
     </div>
